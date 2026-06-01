@@ -30,4 +30,60 @@
   --royal: #1a237e;     /* اللون الرئيسي */
   --silver: #b0bec5;    /* اللون الثانوي */
   --gold: #c9a84c;      /* لون التمييز */
+  
+    /* الألوان الرئيسية */
+    --royal: #1a237e;
+    --royal-dark: #0d1547;
+    --royal-mid: #283593;
+    --royal-light: #3949ab;
+    --royal-soft: #e8eaf6;
+    
+    /* الألوان الفضية */
+    --silver: #b0bec5;
+    --silver-light: #eceff1;
+    --silver-mid: #cfd8dc;
+    --silver-dark: #78909c;
+    
+    /* ألوان إضافية */
+    --accent: #7986cb;
+    --gold: #c9a84c;
+    --gold-light: #f5e5b0;
+    --white: #ffffff;
+    
+    /* ألوان النصوص */
+    --text-dark: #1a1a2e;
+    --text-mid: #455a64;
+    --text-light: #90a4ae;
+    
+    /* ألوان الخلفيات */
+    --bg-light: #f8faff;
+    --bg-section: #f0f4ff;
+    
+    /* الظلال */
+    --card-shadow: 0 8px 32px rgba(26,35,126,0.10);
+    --card-hover-shadow: 0 16px 48px rgba(26,35,126,0.18);
+    
+    /* الحواف */
+    --radius: 16px;
+    --radius-sm: 10px;
+    
+    /* الخطوط */
+    --font-cairo: 'Cairo', sans-serif;
+    
+    /* الانتقالات */
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+}
+
+/* الوضع المظلم */
+[data-theme="dark"] {
+    --white: #0d1547;
+    --text-dark: #e8eaf6;
+    --text-mid: #9fa8da;
+    --text-light: #5c6bc0;
+    --bg-light: #0d1547;
+    --bg-section: #111b4a;
+    --silver-light: #1a237e;
+    --silver-mid: #283593;
+    --card-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
