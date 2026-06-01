@@ -2647,50 +2647,24 @@
         });
     });
 </script>
-    <!-- لوحة تحكم المسؤول (مخفية) -->
-<div id="admin-panel" style="display: none; position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
-    <button id="toggleAdminBtn" style="background: #1a237e; color: white; border: none; border-radius: 30px; padding: 10px 18px; font-size: 12px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-        <i class="fas fa-lock"></i> لوحة المسؤول
-    </button>
-    
-    <div id="adminModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1000px; max-height: 80vh; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000; overflow: auto; direction: ltr;">
-        <div style="position: sticky; top: 0; background: #1a237e; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 18px;">📋 قائمة طلبات التسجيل</h3>
-            <button id="closeAdminBtn" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
-        </div>
-        <div style="padding: 20px;">
-            <div style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                <button id="exportExcelBtn" style="background: #25a366; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">📊 تصدير Excel</button>
-                <button id="clearAllBtn" style="background: #dc3545; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">🗑️ حذف الكل</button>
-                <span id="recordCount" style="background: #e8eaf6; padding: 8px 16px; border-radius: 8px; font-size: 14px;">0 طلب</span>
-            </div>
-            <div id="submissionsList" style="max-height: 500px; overflow-y: auto;"></div>
-        </div>
+    <!-- لوحة تحكم المسؤول - محمية بكلمة مرور -->
+<!-- الزر ظاهر دائماً -->
+<button id="toggleAdminBtn" style="position: fixed; bottom: 20px; left: 20px; background: #1a237e; color: white; border: none; border-radius: 30px; padding: 10px 18px; font-size: 12px; cursor: pointer; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    <i class="fas fa-lock"></i> لوحة المسؤول
+</button>
+
+<div id="adminModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1000px; max-height: 80vh; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000; overflow: auto; direction: ltr;">
+    <div style="position: sticky; top: 0; background: #1a237e; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; font-size: 18px;">📋 قائمة طلبات التسجيل</h3>
+        <button id="closeAdminBtn" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
     </div>
-</div>
-
-<div id="adminOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;"></div>
-
-<script>
-   <!-- لوحة تحكم المسؤول - محمية بكلمة مرور -->
-<div id="admin-panel" style="display: none; position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
-    <button id="toggleAdminBtn" style="background: #1a237e; color: white; border: none; border-radius: 30px; padding: 10px 18px; font-size: 12px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-        <i class="fas fa-lock"></i> لوحة المسؤول
-    </button>
-    
-    <div id="adminModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1000px; max-height: 80vh; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000; overflow: auto; direction: ltr;">
-        <div style="position: sticky; top: 0; background: #1a237e; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 18px;">📋 قائمة طلبات التسجيل</h3>
-            <button id="closeAdminBtn" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
+    <div style="padding: 20px;">
+        <div style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <button id="exportExcelBtn" style="background: #25a366; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">📊 تصدير Excel</button>
+            <button id="clearAllBtn" style="background: #dc3545; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">🗑️ حذف الكل</button>
+            <span id="recordCount" style="background: #e8eaf6; padding: 8px 16px; border-radius: 8px; font-size: 14px;">0 طلب</span>
         </div>
-        <div style="padding: 20px;">
-            <div style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                <button id="exportExcelBtn" style="background: #25a366; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">📊 تصدير Excel</button>
-                <button id="clearAllBtn" style="background: #dc3545; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">🗑️ حذف الكل</button>
-                <span id="recordCount" style="background: #e8eaf6; padding: 8px 16px; border-radius: 8px; font-size: 14px;">0 طلب</span>
-            </div>
-            <div id="submissionsList" style="max-height: 500px; overflow-y: auto;"></div>
-        </div>
+        <div id="submissionsList" style="max-height: 500px; overflow-y: auto;"></div>
     </div>
 </div>
 
@@ -2699,11 +2673,8 @@
 <script>
     // لوحة تحكم المسؤول - محمية بكلمة مرور
     (function() {
-        var panel = document.getElementById('admin-panel');
-        if(panel) panel.style.display = 'block';
-        
         // 🔐 كلمة المرور - غيّرها إلى ما تريد
-        var ADMIN_PASSWORD = 'dar123'; // يمكنك تغيير هذا الرقم
+        var ADMIN_PASSWORD = 'dar123';
         
         function checkPassword() {
             var password = prompt('🔐 الرجاء إدخال كلمة مرور المسؤول:');
@@ -2740,7 +2711,7 @@
             html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">حذف</th>';
             html += '</table></thead><tbody>';
             
-            submissions.reverse().forEach(function(sub, index) {
+            submissions.slice().reverse().forEach(function(sub, index) {
                 html += '<tr style="border-bottom: 1px solid #eee;">';
                 html += '<td style="padding: 10px;">' + (index + 1) + '</td>';
                 html += '<td style="padding: 10px;">' + escapeHtml(sub.fullName) + '</td>';
