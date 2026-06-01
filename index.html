@@ -2,6 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- إعدادات الجوال المحسنة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#1a237e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="معهد دار الخبراء العالي للتدريب - دبلومات وبرامج تدريبية معتمدة في الرياض">
     <meta name="keywords" content="معهد تدريب, دبلوم شبكات, موارد بشرية, تدريب مهني, الرياض, السعودية">
@@ -1356,6 +1361,494 @@
                 font-size: 36px;
             }
         }
+        /* ============================================
+   تحسينات الجوال (Mobile First)
+   ============================================ */
+
+/* الهواتف الصغيرة جداً (أقل من 400px) */
+@media (max-width: 400px) {
+    /* تقليص حجم النصوص */
+    .hero-title {
+        font-size: 24px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 13px !important;
+    }
+    
+    .section-title {
+        font-size: 22px !important;
+    }
+    
+    /* الأزرار تصبح بعرض كامل */
+    .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-hero-primary, .btn-hero-outline {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* إحصائيات الهيدر */
+    .hero-stats {
+        gap: 16px;
+        justify-content: space-between;
+    }
+    
+    .hero-stat-num {
+        font-size: 18px;
+    }
+    
+    .hero-stat-label {
+        font-size: 9px;
+    }
+    
+    /* تقليص التباعدات */
+    .section-pad {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* البطاقات */
+    .about-card, .program-card, .trainer-card {
+        padding: 16px;
+    }
+    
+    .program-card-header {
+        padding: 20px;
+    }
+    
+    .program-icon {
+        font-size: 28px;
+    }
+    
+    .program-card-header h3 {
+        font-size: 16px;
+    }
+    
+    /* النموذج */
+    .form-sidebar, .form-main {
+        padding: 20px;
+    }
+    
+    .form-sidebar h3 {
+        font-size: 18px;
+    }
+    
+    .form-step {
+        gap: 10px;
+    }
+    
+    .step-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    /* التذييل */
+    footer {
+        padding: 40px 0 0;
+    }
+    
+    .footer-desc {
+        font-size: 12px;
+    }
+}
+
+/* الهواتف المتوسطة والكبيرة (401px - 576px) */
+@media (min-width: 401px) and (max-width: 576px) {
+    .hero-title {
+        font-size: 28px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-hero-primary, .btn-hero-outline {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .section-pad {
+        padding: 50px 0;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .hero-stat-num {
+        font-size: 20px;
+    }
+}
+
+/* الهواتف الكبيرة والتابلت الصغير (577px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero-title {
+        font-size: 32px !important;
+    }
+    
+    .hero-btns {
+        flex-wrap: wrap;
+    }
+    
+    .section-pad {
+        padding: 60px 0;
+    }
+}
+
+/* إصلاح مشكلة القائمة (Menu) على الجوال */
+@media (max-width: 991px) {
+    /* القائمة المنبثقة */
+    .navbar-collapse {
+        background: var(--royal-dark);
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 15px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .navbar-collapse.show {
+        display: block !important;
+    }
+    
+    .nav-link-item {
+        padding: 12px 16px !important;
+        border-radius: 8px;
+        margin: 4px 0;
+    }
+    
+    .nav-cta-btn {
+        margin-top: 8px;
+        text-align: center;
+    }
+    
+    /* إصلاح ظهور القائمة عند الضغط */
+    .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+    }
+    
+    /* تحسين المسافات */
+    .hero-card {
+        padding: 16px;
+    }
+    
+    .hero-card-icon {
+        font-size: 22px;
+    }
+    
+    .hero-card h4 {
+        font-size: 12px;
+    }
+    
+    .hero-card p {
+        font-size: 10px;
+    }
+}
+
+/* إصلاح مشاكل البطاقات على الجوال */
+@media (max-width: 576px) {
+    /* كل البطاقات تصبح بعرض كامل */
+    .col-6 {
+        width: 100% !important;
+    }
+    
+    /* البطاقات في القسم الرئيسي */
+    .hero-visual .row .col-6 {
+        width: 50% !important;
+    }
+    
+    /* بطاقات من نحن */
+    .col-md-6 {
+        width: 100%;
+    }
+    
+    /* البرامج */
+    .col-md-6.col-xl-3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* المدربون */
+    .col-sm-6.col-lg-3 {
+        width: 100%;
+    }
+    
+    /* المعرض */
+    .col-md-4 {
+        width: 100%;
+    }
+    
+    /* التواصل */
+    .col-lg-5, .col-lg-7 {
+        width: 100%;
+    }
+    
+    /* التذييل */
+    .col-lg-4, .col-sm-6, .col-lg-3 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* النموذج */
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+/* تحسين ظهور السلايدر على الجوال */
+@media (max-width: 576px) {
+    .partnersSwiper .swiper-slide {
+        width: 150px !important;
+    }
+    
+    .partner-logo {
+        padding: 12px;
+        font-size: 11px;
+        min-height: 55px;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 12px;
+    }
+    
+    .t-name {
+        font-size: 12px;
+    }
+}
+
+/* إصلاح مشكلة الفلوتنغ واتساب */
+@media (max-width: 576px) {
+    .floating-wa {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+/* تحسين ظهور الصور الوهمية */
+@media (max-width: 576px) {
+    .gallery-placeholder {
+        height: 150px;
+    }
+    
+    .gallery-placeholder i {
+        font-size: 24px;
+    }
+    
+    .gallery-placeholder span {
+        font-size: 11px;
+    }
+}
+
+/* إصلاح مشكلة النصوص الطويلة */
+@media (max-width: 576px) {
+    .section-sub {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+    
+    .why-text p {
+        font-size: 12px;
+    }
+    
+    .why-text h4 {
+        font-size: 14px;
+    }
+    
+    .why-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .why-item {
+        padding: 15px;
+    }
+}
+
+/* تحسين أزرار التواصل */
+@media (max-width: 576px) {
+    .btn-whatsapp, .btn-call {
+        padding: 10px 16px;
+        font-size: 13px;
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .contact-info-card {
+        padding: 25px 20px;
+    }
+}
+
+/* إصلاح مشكلة الـ Container */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    /* إزالة الـ margin الزائد */
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .col-12, .col-md-6, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-7 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+/* تحسين ظهور شريط التنقل على الجوال عند التمرير */
+@media (max-width: 991px) {
+    #navbar.scrolled .navbar-collapse {
+        background: rgba(13,21,71,0.98);
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* إصلاح مشكلة الإحصائيات على الجوال */
+@media (max-width: 576px) {
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    .stat-icon {
+        font-size: 22px;
+    }
+    
+    .stat-box {
+        padding: 15px;
+    }
+}
+
+/* تحسين ظهور الحقول في النموذج */
+@media (max-width: 576px) {
+    .form-control-custom {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .form-label {
+        font-size: 12px;
+    }
+    
+    .btn-submit {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .checkbox-custom label {
+        font-size: 11px;
+    }
+    
+    .sidebar-contact {
+        font-size: 11px;
+    }
+}
+
+/* إصلاح مشكلة ظهور الخريطة الوهمية */
+@media (max-width: 576px) {
+    .map-container {
+        height: 200px;
+        font-size: 11px;
+    }
+    
+    .map-container i {
+        font-size: 18px;
+    }
+}
+
+/* تحسين ظهور الفوتر */
+@media (max-width: 576px) {
+    .footer-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .footer-link, .footer-contact-item {
+        font-size: 12px;
+    }
+    
+    .footer-logo-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 10px;
+    }
+    
+    .footer-brand-name {
+        font-size: 14px;
+    }
+    
+    .footer-brand-sub {
+        font-size: 10px;
+    }
+    
+    .footer-desc {
+        font-size: 11px;
+    }
+    
+    .social-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+/* إصلاح مشكلة hover على الجوال (إزالة التأثيرات غير المناسبة) */
+@media (max-width: 768px) {
+    .about-card:hover, .program-card:hover, .trainer-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    .btn-hero-primary:hover, .btn-program:hover {
+        transform: translateY(-1px);
+    }
+}
+
+/* تحسين قابلية القراءة */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1, h2, h3, h4 {
+        word-break: break-word;
+    }
+    
+    /* منع خروج النصوص */
+    .program-features li {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+}
     </style>
 </head>
 <body>
@@ -1382,9 +1875,9 @@
                 <small>للتدريب — الرياض</small>
             </div>
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <i class="fas fa-bars text-white"></i>
-        </button>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="القائمة">
+          <i class="fas fa-bars text-white" style="font-size: 22px;"></i>
+       </button>
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav me-auto gap-1">
                 <li class="nav-item"><a class="nav-link nav-link-item active" href="#hero">الرئيسية</a></li>
