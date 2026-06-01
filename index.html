@@ -1,33 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معهد دار الخبراء العالي للتدريب - دبلومات وبرامج تدريبية معتمدة في الرياض">
+    <title>معهد دار الخبراء العالي للتدريب</title>
+    
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
 <body>
 
-<header id="header"></header>
+<!-- Loader -->
+<div id="loader">
+    <div class="loader-logo">دار<br>الخبراء</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p class="loader-text">جارٍ تحميل الموقع...</p>
+</div>
 
+<!-- WhatsApp Float -->
+<a href="https://wa.me/966590252298" class="floating-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Content -->
 <main>
-
-<section id="hero"></section>
-
-<section id="accreditations"></section>
-
-<section id="programs"></section>
-
-<section id="benefits"></section>
-
-<section id="register"></section>
-
-<section id="testimonials"></section>
-
-<section id="trainers"></section>
-
-<section id="partners"></section>
-
-<section id="gallery"></section>
-
-<section id="contact"></section>
-
+    <div id="hero"></div>
+    <div id="about"></div>
+    <div id="stats"></div>
+    <div id="programs"></div>
+    <div id="why-us"></div>
+    <div id="trainers"></div>
+    <div id="partners"></div>
+    <div id="testimonials"></div>
+    <div id="gallery"></div>
+    <div id="register"></div>
+    <div id="contact"></div>
 </main>
 
-<footer id="footer"></footer>
+<!-- Footer -->
+<div id="footer"></div>
 
-<script src="js/main.js"></script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+<!-- Component Loader -->
+<script>
+    // دالة لتحميل المكونات
+    async function loadComponent(elementId, componentPath) {
+        try {
+            const response = await fetch(componentPath);
+            const html = await response.text();
+            document.getElementById(elementId).innerHTML = html;
+        } catch (error) {
+            console.error(`Error loading ${componentPath}:`, error);
+        }
+    }
+
+    // تحميل جميع المكونات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header', 'components/header.html');
+        loadComponent('hero', 'components/hero.html');
+        loadComponent('about', 'components/about.html');
+        loadComponent('stats', 'components/stats.html');
+        loadComponent('programs', 'components/programs.html');
+        loadComponent('why-us', 'components/why-us.html');
+        loadComponent('trainers', 'components/trainers.html');
+        loadComponent('partners', 'components/partners.html');
+        loadComponent('testimonials', 'components/testimonials.html');
+        loadComponent('gallery', 'components/gallery.html');
+        loadComponent('register', 'components/register.html');
+        loadComponent('contact', 'components/contact.html');
+        loadComponent('footer', 'components/footer.html');
+    });
+</script>
+
+<!-- Main JS -->
+<script src="js/main.js" type="module"></script>
 </body>
+</html>
