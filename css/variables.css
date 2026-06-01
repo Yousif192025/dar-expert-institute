@@ -27,4 +27,7 @@
 
   /* Transition */
   --transition: .3s ease;
+  --royal: #1a237e;     /* اللون الرئيسي */
+  --silver: #b0bec5;    /* اللون الثانوي */
+  --gold: #c9a84c;      /* لون التمييز */
 }
