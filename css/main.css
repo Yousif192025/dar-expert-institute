@@ -1,0 +1,27 @@
+/* ============================================
+   MAIN CSS - يستورد جميع ملفات الأنماط
+   ============================================ */
+
+/* 1. الأساسيات */
+@import 'variables.css';
+@import 'reset.css';
+@import 'layout.css';
+
+/* 2. المكونات الرئيسية */
+@import 'header.css';
+@import 'hero.css';
+@import 'about.css';
+@import 'stats.css';
+@import 'programs.css';
+@import 'why-us.css';
+@import 'trainers.css';
+@import 'partners.css';
+@import 'testimonials.css';
+@import 'gallery.css';
+@import 'register.css';
+@import 'contact.css';
+@import 'footer.css';
+
+/* 3. الوضع المظلم والاستجابة */
+@import 'dark-mode.css';
+@import 'responsive.css';
