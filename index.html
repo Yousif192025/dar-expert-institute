@@ -2590,21 +2590,53 @@
     });
 
     // إرسال النموذج
-    function submitForm() {
-        var fname = document.getElementById('fname').value.trim();
-        var lname = document.getElementById('lname').value.trim();
-        var phone = document.getElementById('phone').value.trim();
-        var gender = document.getElementById('gender').value;
-        var program = document.getElementById('program').value;
-        var agree = document.getElementById('agree').checked;
-        if (!fname || !lname) { alert('الرجاء إدخال الاسم الأول واسم العائلة'); return; }
-        if (!phone) { alert('الرجاء إدخال رقم الجوال'); return; }
-        if (!gender) { alert('الرجاء اختيار الجنس'); return; }
-        if (!program) { alert('الرجاء اختيار البرنامج المطلوب'); return; }
-        if (!agree) { alert('الرجاء الموافقة على الشروط والأحكام'); return; }
-        document.getElementById('reg-form').style.display = 'none';
-        document.getElementById('success-banner').style.display = 'block';
-    }
+   function submitForm() {
+    var fname = document.getElementById('fname').value.trim();
+    var lname = document.getElementById('lname').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var gender = document.getElementById('gender').value;
+    var edu = document.getElementById('edu').value;
+    var program = document.getElementById('program').value;
+    var msg = document.getElementById('msg').value;
+    var agree = document.getElementById('agree').checked;
+    
+    if (!fname || !lname) { alert('الرجاء إدخال الاسم الأول واسم العائلة'); return; }
+    if (!phone) { alert('الرجاء إدخال رقم الجوال'); return; }
+    if (!gender) { alert('الرجاء اختيار الجنس'); return; }
+    if (!program) { alert('الرجاء اختيار البرنامج المطلوب'); return; }
+    if (!agree) { alert('الرجاء الموافقة على الشروط والأحكام'); return; }
+    
+    // إنشاء كائن البيانات
+    var formData = {
+        id: Date.now(),
+        fullName: fname + ' ' + lname,
+        phone: phone,
+        email: email || 'غير مدخل',
+        gender: gender,
+        education: edu || 'غير مدخل',
+        program: program,
+        message: msg || 'لا توجد ملاحظات',
+        date: new Date().toLocaleString('ar-SA'),
+        status: 'جديد'
+    };
+    
+    // استرجاع الطلبات السابقة
+    var submissions = localStorage.getItem('dar_expert_registrations');
+    submissions = submissions ? JSON.parse(submissions) : [];
+    
+    // إضافة الطلب الجديد
+    submissions.push(formData);
+    
+    // حفظ في localStorage
+    localStorage.setItem('dar_expert_registrations', JSON.stringify(submissions));
+    
+    console.log('✅ تم حفظ الطلب بنجاح:', formData);
+    
+    // إظهار رسالة النجاح
+    document.getElementById('reg-form').style.display = 'none';
+    document.getElementById('success-banner').style.display = 'block';
+}
 
     // التمرير السلس للروابط
     document.querySelectorAll('a[href^="#"]').forEach(function(a) {
@@ -2614,6 +2646,146 @@
             if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
         });
     });
+</script>
+    <!-- لوحة تحكم المسؤول (مخفية) -->
+<div id="admin-panel" style="display: none; position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+    <button id="toggleAdminBtn" style="background: #1a237e; color: white; border: none; border-radius: 30px; padding: 10px 18px; font-size: 12px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+        <i class="fas fa-lock"></i> لوحة المسؤول
+    </button>
+    
+    <div id="adminModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1000px; max-height: 80vh; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000; overflow: auto; direction: ltr;">
+        <div style="position: sticky; top: 0; background: #1a237e; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 18px;">📋 قائمة طلبات التسجيل</h3>
+            <button id="closeAdminBtn" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
+        </div>
+        <div style="padding: 20px;">
+            <div style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button id="exportExcelBtn" style="background: #25a366; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">📊 تصدير Excel</button>
+                <button id="clearAllBtn" style="background: #dc3545; color: white; border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer;">🗑️ حذف الكل</button>
+                <span id="recordCount" style="background: #e8eaf6; padding: 8px 16px; border-radius: 8px; font-size: 14px;">0 طلب</span>
+            </div>
+            <div id="submissionsList" style="max-height: 500px; overflow-y: auto;"></div>
+        </div>
+    </div>
+</div>
+
+<div id="adminOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;"></div>
+
+<script>
+    // لوحة تحكم المسؤول
+    (function() {
+        var panel = document.getElementById('admin-panel');
+        if(panel) panel.style.display = 'block';
+        
+        var toggleBtn = document.getElementById('toggleAdminBtn');
+        var modal = document.getElementById('adminModal');
+        var overlay = document.getElementById('adminOverlay');
+        var closeBtn = document.getElementById('closeAdminBtn');
+        
+        function loadSubmissions() {
+            var submissions = localStorage.getItem('dar_expert_registrations');
+            submissions = submissions ? JSON.parse(submissions) : [];
+            
+            var listDiv = document.getElementById('submissionsList');
+            var countSpan = document.getElementById('recordCount');
+            countSpan.textContent = submissions.length + ' طلب';
+            
+            if(submissions.length === 0) {
+                listDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">📭 لا توجد طلبات تسجيل حتى الآن</div>';
+                return;
+            }
+            
+            var html = '<table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: right;">';
+            html += '<thead><tr style="background: #f0f4ff;">';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">#</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">الاسم</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">الجوال</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">البريد</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">الجنس</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">البرنامج</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">تاريخ التسجيل</th>';
+            html += '<th style="padding: 10px; border-bottom: 2px solid #1a237e;">حذف</th>';
+            html += '</tr></thead><tbody>';
+            
+            submissions.reverse().forEach(function(sub, index) {
+                html += '<tr style="border-bottom: 1px solid #eee;">';
+                html += '<td style="padding: 10px;">' + (index + 1) + '</td>';
+                html += '<td style="padding: 10px;">' + escapeHtml(sub.fullName) + '</td>';
+                html += '<td style="padding: 10px;">' + escapeHtml(sub.phone) + '</td>';
+                html += '<td style="padding: 10px;">' + escapeHtml(sub.email) + '</td>';
+                html += '<td style="padding: 10px;">' + escapeHtml(sub.gender) + '</td>';
+                html += '<td style="padding: 10px; max-width: 200px; word-break: break-word;">' + escapeHtml(sub.program) + '</td>';
+                html += '<td style="padding: 10px; font-size: 11px;">' + escapeHtml(sub.date) + '</td>';
+                html += '<td style="padding: 10px;"><button onclick="deleteSubmission(' + sub.id + ')" style="background: #dc3545; color: white; border: none; border-radius: 5px; padding: 4px 10px; cursor: pointer; font-size: 11px;">حذف</button></td>';
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+            listDiv.innerHTML = html;
+        }
+        
+        function escapeHtml(text) {
+            if(!text) return '';
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        window.deleteSubmission = function(id) {
+            var submissions = localStorage.getItem('dar_expert_registrations');
+            submissions = submissions ? JSON.parse(submissions) : [];
+            var newSubmissions = submissions.filter(function(s) { return s.id != id; });
+            localStorage.setItem('dar_expert_registrations', JSON.stringify(newSubmissions));
+            loadSubmissions();
+        };
+        
+        document.getElementById('exportExcelBtn')?.addEventListener('click', function() {
+            var submissions = localStorage.getItem('dar_expert_registrations');
+            submissions = submissions ? JSON.parse(submissions) : [];
+            if(submissions.length === 0) {
+                alert('لا توجد بيانات لتصديرها');
+                return;
+            }
+            var csvRows = [['الاسم', 'الجوال', 'البريد', 'الجنس', 'المؤهل', 'البرنامج', 'الرسالة', 'تاريخ التسجيل', 'الحالة']];
+            submissions.forEach(function(sub) {
+                csvRows.push([
+                    sub.fullName, sub.phone, sub.email, sub.gender, sub.education,
+                    sub.program, sub.message, sub.date, sub.status
+                ]);
+            });
+            var csvContent = csvRows.map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+            var blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            var link = document.createElement('a');
+            var url = URL.createObjectURL(blob);
+            link.href = url;
+            link.setAttribute('download', 'طلبات_التسجيل.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+        
+        document.getElementById('clearAllBtn')?.addEventListener('click', function() {
+            if(confirm('⚠️ هل أنت متأكد من حذف جميع الطلبات؟ لا يمكن التراجع عن هذا الإجراء.')) {
+                localStorage.removeItem('dar_expert_registrations');
+                loadSubmissions();
+                alert('✅ تم حذف جميع الطلبات');
+            }
+        });
+        
+        toggleBtn?.addEventListener('click', function() {
+            modal.style.display = 'block';
+            overlay.style.display = 'block';
+            loadSubmissions();
+        });
+        
+        function closeModal() {
+            modal.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+        
+        closeBtn?.addEventListener('click', closeModal);
+        overlay?.addEventListener('click', closeModal);
+    })();
 </script>
 </body>
 </html>
