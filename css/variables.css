@@ -1,1 +1,30 @@
+:root {
 
+  /* Colors */
+  --royal-blue: #0F2B73;
+  --royal-blue-dark: #091B4D;
+  --royal-blue-light: #2346A0;
+
+  --silver: #C0C7D1;
+  --silver-light: #F5F7FA;
+
+  --white: #FFFFFF;
+
+  --text-dark: #1A1A1A;
+  --text-gray: #666666;
+
+  /* Layout */
+  --container-width: 1280px;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.12);
+
+  /* Transition */
+  --transition: .3s ease;
+}
