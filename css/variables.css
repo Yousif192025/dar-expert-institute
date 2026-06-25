@@ -1,89 +1,49 @@
+/* ============================================================
+   دار الخبراء | Design Tokens – variables.css
+   ============================================================ */
 :root {
-
-  /* Colors */
-  --royal-blue: #0F2B73;
-  --royal-blue-dark: #091B4D;
-  --royal-blue-light: #2346A0;
-
-  --silver: #C0C7D1;
-  --silver-light: #F5F7FA;
-
-  --white: #FFFFFF;
-
-  --text-dark: #1A1A1A;
-  --text-gray: #666666;
-
-  /* Layout */
-  --container-width: 1280px;
-
-  /* Radius */
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-
-  /* Shadows */
-  --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
-  --shadow-md: 0 10px 30px rgba(0,0,0,.12);
-
-  /* Transition */
-  --transition: .3s ease;
-  --royal: #1a237e;     /* اللون الرئيسي */
-  --silver: #b0bec5;    /* اللون الثانوي */
-  --gold: #c9a84c;      /* لون التمييز */
-  
-    /* الألوان الرئيسية */
-    --royal: #1a237e;
-    --royal-dark: #0d1547;
-    --royal-mid: #283593;
-    --royal-light: #3949ab;
-    --royal-soft: #e8eaf6;
-    
-    /* الألوان الفضية */
-    --silver: #b0bec5;
-    --silver-light: #eceff1;
-    --silver-mid: #cfd8dc;
-    --silver-dark: #78909c;
-    
-    /* ألوان إضافية */
-    --accent: #7986cb;
-    --gold: #c9a84c;
-    --gold-light: #f5e5b0;
-    --white: #ffffff;
-    
-    /* ألوان النصوص */
-    --text-dark: #1a1a2e;
-    --text-mid: #455a64;
-    --text-light: #90a4ae;
-    
-    /* ألوان الخلفيات */
-    --bg-light: #f8faff;
-    --bg-section: #f0f4ff;
-    
-    /* الظلال */
-    --card-shadow: 0 8px 32px rgba(26,35,126,0.10);
-    --card-hover-shadow: 0 16px 48px rgba(26,35,126,0.18);
-    
-    /* الحواف */
-    --radius: 16px;
-    --radius-sm: 10px;
-    
-    /* الخطوط */
-    --font-cairo: 'Cairo', sans-serif;
-    
-    /* الانتقالات */
-    --transition: all 0.3s ease;
-    --transition-slow: all 0.5s ease;
+    --navy:        #0B1D5C;
+    --navy-dark:   #071240;
+    --navy-mid:    #1A2E6E;
+    --navy-light:  #2D4494;
+    --navy-soft:   #E8ECFB;
+    --navy-alpha:  rgba(11,29,92,0.08);
+    --gold:        #C8952A;
+    --gold-light:  #F0C060;
+    --gold-soft:   #FDF5E6;
+    --silver:      #8FA5BF;
+    --silver-light:#F4F7FB;
+    --silver-mid:  #D6DFF0;
+    --emerald:     #0E7B5C;
+    --white:       #FFFFFF;
+    --ink:         #0E1B3D;
+    --body-text:   #3D4F6E;
+    --muted:       #7A90AF;
+    --bg-page:     #F7F9FF;
+    --bg-section:  #EFF3FC;
+    --bg-dark:     #071240;
+    --font-display:'Cairo','Tajawal',sans-serif;
+    --font-body:   'Cairo',sans-serif;
+    --section-y:   100px;
+    --section-y-sm:64px;
+    --r-sm:  10px; --r-md: 18px; --r-lg: 28px; --r-xl: 40px;
+    --s-sm:  0 2px 14px rgba(11,29,92,0.07);
+    --s-md:  0 8px 32px rgba(11,29,92,0.11);
+    --s-lg:  0 20px 60px rgba(11,29,92,0.16);
+    --ease:  all 0.28s cubic-bezier(0.4,0,0.2,1);
+    --ease-bounce: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
 }
-
-/* الوضع المظلم */
 [data-theme="dark"] {
-    --white: #0d1547;
-    --text-dark: #e8eaf6;
-    --text-mid: #9fa8da;
-    --text-light: #5c6bc0;
-    --bg-light: #0d1547;
-    --bg-section: #111b4a;
-    --silver-light: #1a237e;
-    --silver-mid: #283593;
-    --card-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    --white:        #0B1D5C;
+    --ink:          #E8F0FF;
+    --body-text:    #A8BCDF;
+    --muted:        #5872A0;
+    --bg-page:      #071240;
+    --bg-section:   #0D1F52;
+    --silver-light: #111E4A;
+    --silver-mid:   #1A2E6E;
+    --navy-soft:    #1A2E6E;
+    --navy-alpha:   rgba(11,29,92,0.3);
+    --s-md: 0 8px 32px rgba(0,0,0,0.4);
+    --s-lg: 0 20px 60px rgba(0,0,0,0.5);
 }
