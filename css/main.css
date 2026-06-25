@@ -25,3 +25,14 @@
 /* 3. الوضع المظلم والاستجابة */
 @import 'dark-mode.css';
 @import 'responsive.css';
+/* ============================================================
+   دار الخبراء | main.css  –  مُدمَج مع index.html
+   هذا الملف يوفّر توافقاً مع المسارات القديمة
+   ============================================================ */
+@import url('variables.css');
+/* كل الأنماط الرئيسية مُضمَّنة داخل index.html لتسريع التحميل.
+   أضف هنا أي تعديلات إضافية مستقبلية. */
+
+/* ========= Lazy-load images ========= */
+img[loading="lazy"] { opacity: 0; transition: opacity .4s ease; }
+img[loading="lazy"].loaded { opacity: 1; }
