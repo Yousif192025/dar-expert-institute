@@ -1,0 +1,12 @@
+[
+  {"id":"p01","title":"السلامة والصحة المهنية NEBOSH","category":"safety","duration":"10 أسابيع","hours":80,"accred":"NEBOSH International","icon":"fas fa-hard-hat","featured":true},
+  {"id":"p02","title":"إدارة السلامة IOSH","category":"safety","duration":"3 أيام","hours":24,"accred":"IOSH","icon":"fas fa-shield-halved","featured":false},
+  {"id":"p03","title":"السلامة من الحرائق وإدارة الطوارئ","category":"safety","duration":"3 أيام","hours":24,"accred":"محلي","icon":"fas fa-fire-extinguisher","featured":false},
+  {"id":"p04","title":"القيادة الاستراتيجية والإدارة","category":"management","duration":"5 أيام","hours":40,"accred":"معتمد","icon":"fas fa-chess-king","featured":true},
+  {"id":"p05","title":"إدارة المشاريع PMP","category":"management","duration":"10 أسابيع","hours":35,"accred":"PMI","icon":"fas fa-diagram-project","featured":true},
+  {"id":"p06","title":"الأمن السيبراني CompTIA Security+","category":"cyber","duration":"8 أسابيع","hours":60,"accred":"CompTIA","icon":"fas fa-lock","featured":true},
+  {"id":"p07","title":"الأمن السيبراني CEH","category":"cyber","duration":"5 أيام","hours":40,"accred":"EC-Council","icon":"fas fa-user-secret","featured":false},
+  {"id":"p08","title":"إدارة الموارد البشرية PHR","category":"hr","duration":"12 أسبوع","hours":96,"accred":"HRCI","icon":"fas fa-users","featured":true},
+  {"id":"p09","title":"التحول الرقمي والذكاء الاصطناعي","category":"it","duration":"6 أسابيع","hours":48,"accred":"معتمد","icon":"fas fa-laptop-code","featured":true},
+  {"id":"p10","title":"إدارة الجودة ISO 9001","category":"quality","duration":"5 أيام","hours":40,"accred":"ISO","icon":"fas fa-medal","featured":true}
+]
