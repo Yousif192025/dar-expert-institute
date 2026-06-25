@@ -1,1 +1,28 @@
+/* ============================================================
+   دار الخبراء | responsive.css – Breakpoints helper
+   ============================================================ */
+@media (max-width: 1199px) {
+    :root { --section-y: 80px; }
+}
+@media (max-width: 991px) {
+    :root { --section-y: 64px; }
+    .hero-visual { margin-top: 40px; }
+    .about-body  { padding-right: 0; margin-top: 32px; }
+}
+@media (max-width: 767px) {
+    :root { --section-y: 52px; }
+    .s-title { font-size: 26px !important; }
+    .hero-ctas { flex-direction: column; }
+    .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
+    .float-badge { display: none !important; }
+    .form-row { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 575px) {
+    .hero-title  { font-size: 26px !important; }
+    .prog-filter { gap: 6px; }
+    .pf-btn { padding: 6px 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
 
