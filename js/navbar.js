@@ -5,3 +5,4 @@
         nb && nb.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 })();
+
