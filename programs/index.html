@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>جميع البرامج التدريبية | معهد دار الخبراء</title>
+<meta name="description" content="استعرض جميع البرامج التدريبية المعتمدة في معهد دار الخبراء – NEBOSH، PMP، الأمن السيبراني، الموارد البشرية، الجودة، التحول الرقمي والقيادة.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/program-page.css">
+<style>
+.prog-filter{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:44px}
+.pf-btn{padding:8px 18px;border-radius:40px;border:1.5px solid var(--silver-mid);background:var(--white);color:var(--body-text);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);transition:var(--ease);display:flex;align-items:center;gap:6px}
+.pf-btn:hover,.pf-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.prog-item.hidden{display:none!important}
+.prg-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);overflow:hidden;height:100%;display:flex;flex-direction:column;transition:var(--ease);box-shadow:var(--s-sm);text-decoration:none}
+.prg-card:hover{transform:translateY(-6px);box-shadow:var(--s-lg)}
+.prg-hd{padding:24px 20px;background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));position:relative}
+.prg-cat{display:inline-flex;align-items:center;gap:5px;background:rgba(200,149,42,.2);color:var(--gold-light);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.prg-ico{font-size:36px;color:rgba(255,255,255,.88);display:block;margin-bottom:10px}
+.prg-hd h3{color:#fff;font-size:16px;font-weight:800;margin-bottom:4px;line-height:1.3}
+.prg-hd p{color:rgba(168,188,223,.82);font-size:12.5px;line-height:1.6}
+.prg-bd{padding:20px;flex:1;display:flex;flex-direction:column}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chip{background:var(--navy-soft);color:var(--navy-light);font-size:11px;padding:4px 10px;border-radius:7px;font-weight:600;display:flex;align-items:center;gap:4px}
+.prg-price{font-size:18px;font-weight:900;color:var(--navy);margin-bottom:14px}
+.prg-price .cur{font-size:13px;color:var(--muted);font-weight:600}
+.prg-actions{display:flex;gap:8px;margin-top:auto}
+.btn-details{flex:1;padding:10px;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff;border:none;border-radius:9px;font-weight:700;font-size:13px;cursor:pointer;font-family:var(--font);text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;transition:var(--ease)}
+.btn-details:hover{color:#fff;box-shadow:0 5px 15px rgba(11,29,92,.3)}
+.btn-reg{flex:1;padding:9px;background:transparent;color:var(--navy);border:1.5px solid var(--navy);border-radius:9px;font-weight:700;font-size:13px;cursor:pointer;font-family:var(--font);transition:var(--ease)}
+.btn-reg:hover{background:var(--navy-soft)}
+#loader{position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s,visibility .6s}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.ld-em{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--navy-dark);margin-bottom:18px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.ld-bar{width:180px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.ld-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));animation:fill-bar 1.8s ease forwards}
+@keyframes fill-bar{from{width:0}to{width:100%}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="ld-em">دخ</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <div class="container-fluid px-3 px-lg-5">
+    <a class="nav-brand" href="../index.html"><div class="nav-logo">دخ</div><div><span class="nav-brand-name">دار الخبراء</span><span class="nav-brand-sub">معهد التدريب العالي</span></div></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-lnk" href="../index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="../index.html#about">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk active" href="index.html">البرامج</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="../index.html#corporate">التدريب المؤسسي</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="../index.html#contact">تواصل معنا</a></li>
+        <li class="nav-item d-flex align-items-center"><button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button></li>
+      </ul>
+      <a href="../index.html#register" class="btn-nav-cta nav-link ms-lg-3 mt-2 mt-lg-0"><i class="fas fa-pen-to-square me-1"></i>سجّل الآن</a>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb-bar">
+  <div class="container breadcrumb-inner">
+    <div class="bc-trail"><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a><i class="fas fa-chevron-left"></i><span>البرامج التدريبية</span></div>
+    <h1 class="bc-title">جميع <span>البرامج التدريبية</span></h1>
+    <p class="bc-desc">أكثر من 45 برنامجاً تدريبياً معتمداً في 7 مجالات تخصصية – اختر برنامجك الآن</p>
+  </div>
+</div>
+<section class="section-pad bg-page">
+  <div class="container">
+    <div class="prog-filter" role="group">
+      <button class="pf-btn active" data-filter="all"><i class="fas fa-th-large"></i> الكل</button>
+      <button class="pf-btn" data-filter="safety"><i class="fas fa-hard-hat"></i> السلامة المهنية</button>
+      <button class="pf-btn" data-filter="management"><i class="fas fa-chart-line"></i> الإدارة والقيادة</button>
+      <button class="pf-btn" data-filter="it"><i class="fas fa-laptop-code"></i> تقنية المعلومات</button>
+      <button class="pf-btn" data-filter="cyber"><i class="fas fa-shield-halved"></i> الأمن السيبراني</button>
+      <button class="pf-btn" data-filter="hr"><i class="fas fa-users"></i> الموارد البشرية</button>
+      <button class="pf-btn" data-filter="quality"><i class="fas fa-medal"></i> الجودة والتميز</button>
+    </div>
+    <div class="row g-4" id="programsGrid">
+      <div class="col-md-6 col-lg-4 prog-item" data-category="safety" data-aos="fade-up"><a class="prg-card" href="nebosh.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد NEBOSH</span><i class="fas fa-hard-hat prg-ico"></i><h3>السلامة والصحة المهنية NEBOSH</h3><p>الشهادة الدولية الأكثر احتراماً في السلامة المهنية</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>10 أسابيع</span><span class="chip"><i class="fas fa-hourglass-half"></i>80 ساعة</span><span class="chip"><i class="fas fa-globe"></i>دولي</span></div><div class="prg-price"><span class="cur">ر.س </span>4,800</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="safety" data-aos="fade-up" data-aos-delay="100"><a class="prg-card" href="iosh.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد IOSH</span><i class="fas fa-shield-halved prg-ico"></i><h3>إدارة السلامة IOSH Managing Safely</h3><p>برنامج مكثف 3 أيام للمشرفين ومسؤولي السلامة</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>3 أيام</span><span class="chip"><i class="fas fa-hourglass-half"></i>24 ساعة</span><span class="chip"><i class="fas fa-globe"></i>دولي</span></div><div class="prg-price"><span class="cur">ر.س </span>2,200</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="management" data-aos="fade-up" data-aos-delay="200"><a class="prg-card" href="pmp.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد PMI</span><i class="fas fa-diagram-project prg-ico"></i><h3>إدارة المشاريع الاحترافية PMP</h3><p>أعلى شهادة احترافية في إدارة المشاريع عالمياً</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>10 أسابيع</span><span class="chip"><i class="fas fa-hourglass-half"></i>35 ساعة</span><span class="chip"><i class="fas fa-globe"></i>دولي</span></div><div class="prg-price"><span class="cur">ر.س </span>5,200</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="cyber" data-aos="fade-up"><a class="prg-card" href="cybersecurity.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد CompTIA</span><i class="fas fa-lock prg-ico"></i><h3>الأمن السيبراني CompTIA Security+</h3><p>الشهادة الدولية الأوسع في الأمن السيبراني</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>8 أسابيع</span><span class="chip"><i class="fas fa-hourglass-half"></i>60 ساعة</span><span class="chip"><i class="fas fa-globe"></i>دولي</span></div><div class="prg-price"><span class="cur">ر.س </span>4,500</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="hr" data-aos="fade-up" data-aos-delay="100"><a class="prg-card" href="hr-phr.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد HRCI</span><i class="fas fa-users prg-ico"></i><h3>إدارة الموارد البشرية PHR</h3><p>الشهادة الاحترافية الأعلى في الموارد البشرية</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>12 أسبوع</span><span class="chip"><i class="fas fa-hourglass-half"></i>96 ساعة</span><span class="chip"><i class="fas fa-globe"></i>دولي</span></div><div class="prg-price"><span class="cur">ر.س </span>5,800</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="quality" data-aos="fade-up" data-aos-delay="200"><a class="prg-card" href="iso9001.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> معتمد ISO</span><i class="fas fa-medal prg-ico"></i><h3>إدارة الجودة ISO 9001:2015</h3><p>طريقك لاعتماد ISO وتحسين عمليات مؤسستك</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>5 أيام</span><span class="chip"><i class="fas fa-hourglass-half"></i>40 ساعة</span><span class="chip"><i class="fas fa-certificate"></i>معتمد</span></div><div class="prg-price"><span class="cur">ر.س </span>3,200</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="it" data-aos="fade-up"><a class="prg-card" href="digital-transformation.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> برنامج 2026</span><i class="fas fa-laptop-code prg-ico"></i><h3>التحول الرقمي والذكاء الاصطناعي</h3><p>للمديرين وقادة الأعمال – لا يُشترط خلفية تقنية</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>6 أسابيع</span><span class="chip"><i class="fas fa-hourglass-half"></i>48 ساعة</span><span class="chip"><i class="fas fa-certificate"></i>معتمد</span></div><div class="prg-price"><span class="cur">ر.س </span>3,800</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+      <div class="col-md-6 col-lg-4 prog-item" data-category="management" data-aos="fade-up" data-aos-delay="100"><a class="prg-card" href="leadership.html"><div class="prg-hd"><span class="prg-cat"><i class="fas fa-star"></i> برنامج متميز</span><i class="fas fa-chess-king prg-ico"></i><h3>القيادة الاستراتيجية وإدارة التغيير</h3><p>حوّل نفسك من مدير إلى قائد استراتيجي استثنائي</p></div><div class="prg-bd"><div class="chips"><span class="chip"><i class="fas fa-clock"></i>5 أيام</span><span class="chip"><i class="fas fa-hourglass-half"></i>40 ساعة</span><span class="chip"><i class="fas fa-certificate"></i>معتمد</span></div><div class="prg-price"><span class="cur">ر.س </span>3,500</div><div class="prg-actions"><span class="btn-details"><i class="fas fa-eye me-1"></i>التفاصيل</span></div></div></a></div>
+    </div>
+  </div>
+</section>
+<footer class="footer"><div class="container"><div class="row g-4">
+  <div class="col-md-4"><a class="f-logo" href="../index.html"><div class="f-logo-box">دخ</div><div><strong>دار الخبراء</strong><small>معهد التدريب العالي</small></div></a></div>
+  <div class="col-md-4"><h4 class="f-col-title">روابط سريعة</h4><ul class="f-list"><li><a href="../index.html#about"><i class="fas fa-chevron-left"></i>من نحن</a></li><li><a href="../index.html#corporate"><i class="fas fa-chevron-left"></i>التدريب المؤسسي</a></li><li><a href="../index.html#contact"><i class="fas fa-chevron-left"></i>تواصل معنا</a></li></ul></div>
+  <div class="col-md-4"><h4 class="f-col-title">تواصل معنا</h4><ul class="f-list"><li><a href="tel:+966500000000"><i class="fas fa-phone"></i>+966 50 000 0000</a></li><li><a href="mailto:info@darexpert.com"><i class="fas fa-envelope"></i>info@darexpert.com</a></li></ul></div>
+</div><div class="footer-bot"><span>© 2026 معهد دار الخبراء. جميع الحقوق محفوظة.</span></div></div></footer>
+<a href="https://wa.me/966500000000" class="wa-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<button id="btt"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../js/program-page.js"></script>
+<script>
+const pbs=document.querySelectorAll('.pf-btn'),pis=document.querySelectorAll('.prog-item');
+pbs.forEach(b=>b.addEventListener('click',()=>{
+  pbs.forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  const f=b.dataset.filter;
+  pis.forEach(it=>{const ok=f==='all'||it.dataset.category===f;it.style.transition='opacity .3s,transform .3s';if(ok){it.classList.remove('hidden');requestAnimationFrame(()=>{it.style.opacity='1';it.style.transform='translateY(0)'})}else{it.style.opacity='0';it.style.transform='translateY(10px)';setTimeout(()=>it.classList.add('hidden'),300)}});
+}));
+</script>
+</body></html>
