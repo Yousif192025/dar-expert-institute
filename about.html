@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B1D5C">
+<title>من نحن | معهد دار الخبراء العالي للتدريب</title>
+<meta name="description" content="تعرف على معهد دار الخبراء العالي للتدريب – رؤيتنا ورسالتنا وقيمنا وتاريخنا منذ 2009 وفريق القيادة والمدربين المعتمدين دولياً.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dar-expert-institute.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="من نحن | معهد دار الخبراء">
+<meta property="og:description" content="تعرف على قصتنا ورؤيتنا ومدربينا المعتمدين دولياً.">
+<meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"معهد دار الخبراء العالي للتدريب","foundingDate":"2009","url":"https://dar-expert-institute.com/","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},"numberOfEmployees":{"@type":"QuantitativeValue","minValue":20,"maxValue":60}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+/* ============================================================
+   ABOUT PAGE – Full Standalone Styles
+   ============================================================ */
+:root{
+  --navy:#0B1D5C;--navy-dark:#071240;--navy-mid:#1A2E6E;--navy-light:#2D4494;
+  --navy-soft:#E8ECFB;--gold:#C8952A;--gold-light:#F0C060;--gold-soft:#FDF5E6;
+  --silver-light:#F4F7FB;--silver-mid:#D6DFF0;--emerald:#0E7B5C;
+  --white:#FFFFFF;--ink:#0E1B3D;--body-text:#3D4F6E;--muted:#7A90AF;
+  --bg-page:#F7F9FF;--bg-section:#EFF3FC;--bg-dark:#071240;
+  --font:'Cairo',sans-serif;
+  --r-sm:10px;--r-md:18px;--r-lg:28px;
+  --s-sm:0 2px 14px rgba(11,29,92,.07);
+  --s-md:0 8px 32px rgba(11,29,92,.11);
+  --s-lg:0 20px 60px rgba(11,29,92,.16);
+  --ease:all .28s cubic-bezier(.4,0,.2,1);
+  --bounce:all .4s cubic-bezier(.34,1.56,.64,1);
+}
+[data-theme="dark"]{
+  --white:#0B1D5C;--ink:#E8F0FF;--body-text:#A8BCDF;--muted:#5872A0;
+  --bg-page:#071240;--bg-section:#0D1F52;
+  --silver-light:#111E4A;--silver-mid:#1A2E6E;--navy-soft:#1A2E6E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);direction:rtl;background:var(--bg-page);color:var(--body-text);overflow-x:hidden;line-height:1.7;transition:background .35s,color .35s}
+
+/* LOADER */
+#loader{position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s,visibility .6s}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.ld-em{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--navy-dark);margin-bottom:18px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.ld-bar{width:180px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.ld-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));animation:fillbar 1.8s ease forwards}
+@keyframes fillbar{from{width:0}to{width:100%}}
+
+/* NAVBAR */
+#navbar{position:fixed;top:0;right:0;left:0;z-index:1000;padding:13px 0;background:rgba(7,18,64,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06);transition:var(--ease)}
+#navbar.scrolled{padding:9px 0;background:rgba(7,18,64,.97);box-shadow:0 4px 24px rgba(7,18,64,.4)}
+.nav-brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--navy-dark)}
+.nav-brand-name{color:#fff;font-size:13.5px;font-weight:800;display:block}
+.nav-brand-sub{color:var(--gold-light);font-size:10px;opacity:.82}
+.nav-lnk{color:rgba(255,255,255,.78)!important;font-size:13px;font-weight:600;padding:6px 12px!important;border-radius:8px;transition:var(--ease)}
+.nav-lnk:hover,.nav-lnk.active{color:#fff!important;background:rgba(200,149,42,.12)}
+.btn-nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark)!important;font-weight:800!important;padding:8px 20px!important;border-radius:10px!important;font-size:13px!important;transition:var(--bounce)!important;white-space:nowrap}
+.btn-nav-cta:hover{transform:translateY(-2px)!important}
+.theme-btn{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:var(--ease)}
+
+/* HERO */
+.page-hero{background:linear-gradient(155deg,#071240 0%,#0B1D5C 50%,#1A2E6E 100%);padding:140px 0 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-glow{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.pg1{width:500px;height:500px;top:-200px;right:-100px;background:rgba(45,68,148,.2)}
+.pg2{width:300px;height:300px;bottom:-100px;left:-80px;background:rgba(200,149,42,.08)}
+.page-hero-content{position:relative;z-index:2}
+.bc-trail{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(168,188,223,.6);margin-bottom:14px;flex-wrap:wrap}
+.bc-trail a{color:rgba(168,188,223,.6);text-decoration:none;transition:var(--ease)}
+.bc-trail a:hover{color:var(--gold-light)}
+.bc-trail i{font-size:9px;color:rgba(168,188,223,.35)}
+.page-hero h1{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:14px}
+.page-hero h1 span{color:var(--gold-light)}
+.page-hero p{font-size:15.5px;color:rgba(168,188,223,.85);max-width:580px;line-height:1.85}
+
+/* SECTIONS */
+.section-pad{padding:88px 0}
+.section-pad-sm{padding:56px 0}
+.bg-page{background:var(--bg-page)}
+.bg-section{background:var(--bg-section)}
+.bg-dark{background:var(--bg-dark)}
+.s-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--navy-soft);color:var(--navy-light);padding:5px 15px;border-radius:30px;font-size:11.5px;font-weight:700;margin-bottom:12px}
+.s-title{font-size:clamp(22px,2.8vw,36px);font-weight:900;color:var(--ink);line-height:1.3;margin-bottom:10px}
+.s-title span{color:var(--navy-light)}
+.s-rule{width:46px;height:3px;background:linear-gradient(90deg,var(--gold),var(--navy-light));border-radius:3px;margin-bottom:16px}
+[data-theme="dark"] .s-title{color:var(--ink)}
+
+/* STORY SECTION */
+.story-num{font-size:80px;font-weight:900;color:var(--navy-soft);line-height:1;position:absolute;top:-10px;right:-10px;opacity:.6;font-variant-numeric:tabular-nums}
+.story-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:32px 28px;position:relative;overflow:hidden;transition:var(--ease);box-shadow:var(--s-sm)}
+.story-card:hover{box-shadow:var(--s-md);transform:translateY(-4px)}
+.story-year{font-size:13px;font-weight:800;color:var(--gold);margin-bottom:6px}
+.story-card h3{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.story-card p{font-size:13.5px;color:var(--muted);line-height:1.8}
+[data-theme="dark"] .story-card{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* STATS */
+.stats-wrap{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:56px 0}
+.stat-box{text-align:center;padding:24px 16px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);transition:var(--ease)}
+.stat-box:hover{background:rgba(200,149,42,.12);border-color:rgba(200,149,42,.3);transform:translateY(-4px)}
+.stat-ico{width:44px;height:44px;border-radius:12px;background:rgba(200,149,42,.18);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold-light);margin:0 auto 12px}
+.stat-num{font-size:40px;font-weight:900;color:#fff;line-height:1}
+.stat-num .su{color:var(--gold-light);font-size:28px}
+.stat-lbl{font-size:12.5px;color:rgba(168,188,223,.75);margin-top:5px;font-weight:500}
+
+/* VALUES */
+.value-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:28px 22px;text-align:center;transition:var(--ease);box-shadow:var(--s-sm);height:100%;position:relative;overflow:hidden}
+.value-card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--gold));opacity:0;transition:var(--ease)}
+.value-card:hover{box-shadow:var(--s-lg);transform:translateY(-6px)}
+.value-card:hover::before{opacity:1}
+.val-ico{width:60px;height:60px;border-radius:16px;background:var(--navy-soft);color:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px;transition:var(--ease)}
+.value-card:hover .val-ico{background:var(--navy);color:#fff}
+.value-card h3{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:9px}
+.value-card p{font-size:13px;color:var(--muted);line-height:1.75}
+[data-theme="dark"] .value-card{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* MISSION VISION */
+.mv-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mv-card{border-radius:var(--r-md);padding:36px 30px;position:relative;overflow:hidden}
+.mv-mission{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
+.mv-vision{background:linear-gradient(135deg,var(--gold),var(--gold-light))}
+.mv-card::before{content:'';position:absolute;bottom:-50px;left:-50px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.mv-card i{font-size:44px;margin-bottom:16px;display:block}
+.mv-mission i,.mv-mission h2,.mv-mission p{color:#fff}
+.mv-vision i,.mv-vision h2,.mv-vision p{color:var(--navy-dark)}
+.mv-card h2{font-size:22px;font-weight:900;margin-bottom:12px}
+.mv-card p{font-size:14.5px;line-height:1.9;opacity:.92}
+
+/* TEAM */
+.team-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:28px 20px;text-align:center;transition:var(--ease);box-shadow:var(--s-sm);height:100%}
+.team-card:hover{box-shadow:var(--s-lg);transform:translateY(-6px)}
+.team-av{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--navy-light),var(--muted));display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;margin:0 auto 14px;border:4px solid var(--navy-soft);transition:var(--ease)}
+.team-card:hover .team-av{border-color:var(--gold-soft)}
+.team-name{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.team-title{display:inline-block;background:var(--navy-soft);color:var(--navy-light);font-size:11px;padding:4px 13px;border-radius:20px;font-weight:700;margin-bottom:12px}
+.team-card p{font-size:12.5px;color:var(--muted);line-height:1.75}
+.team-certs{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:12px}
+.team-cert{background:var(--gold-soft);color:var(--gold);font-size:10.5px;padding:3px 10px;border-radius:20px;font-weight:700}
+[data-theme="dark"] .team-card{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* ACCREDITATIONS */
+.accred-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:24px 20px;text-align:center;transition:var(--ease);box-shadow:var(--s-sm)}
+.accred-card:hover{box-shadow:var(--s-md);transform:translateY(-4px);border-color:var(--navy-soft)}
+.accred-ico{width:60px;height:60px;border-radius:16px;background:var(--navy-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px}
+.accred-card h4{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:7px}
+.accred-card p{font-size:12px;color:var(--muted);line-height:1.65}
+.accred-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-size:10px;font-weight:800;padding:3px 10px;border-radius:20px;margin-top:9px}
+[data-theme="dark"] .accred-card{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--navy-dark),var(--navy-mid));padding:64px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(200,149,42,.07);filter:blur(60px)}
+.cta-title{font-size:clamp(24px,3vw,38px);font-weight:900;color:#fff;margin-bottom:12px}
+.cta-title span{color:var(--gold-light)}
+.cta-desc{color:rgba(168,188,223,.8);font-size:15px;margin-bottom:30px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+.btn-cta-p{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);border:none;padding:13px 34px;border-radius:12px;font-weight:800;font-size:14.5px;cursor:pointer;font-family:var(--font);transition:var(--bounce);text-decoration:none}
+.btn-cta-p:hover{transform:translateY(-3px);color:var(--navy-dark)}
+.btn-cta-o{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 28px;border-radius:12px;font-weight:600;font-size:14.5px;cursor:pointer;font-family:var(--font);transition:var(--ease);text-decoration:none}
+.btn-cta-o:hover{background:rgba(255,255,255,.15);color:#fff}
+
+/* FOOTER */
+.footer{background:var(--navy-dark);color:rgba(168,188,223,.75);padding:48px 0 0}
+.f-logo{display:flex;align-items:center;gap:11px;margin-bottom:13px;text-decoration:none}
+.f-logo-box{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--navy-dark)}
+.f-logo strong{color:#fff;font-size:13px;font-weight:800;display:block}
+.f-logo small{color:var(--gold-light);font-size:9.5px;opacity:.82}
+.f-col-title{color:#fff;font-size:13px;font-weight:800;margin-bottom:16px;position:relative;padding-bottom:8px}
+.f-col-title::after{content:'';position:absolute;bottom:0;right:0;width:24px;height:2px;background:var(--gold);border-radius:2px}
+.f-list{list-style:none}
+.f-list li{margin-bottom:8px}
+.f-list li a{color:rgba(168,188,223,.7);font-size:12.5px;text-decoration:none;transition:var(--ease);display:flex;align-items:center;gap:5px}
+.f-list li a:hover{color:var(--gold-light)}
+.f-list li a i{font-size:10px;color:var(--gold);opacity:.7}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);margin-top:36px;padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
+.footer-bot a{color:var(--gold-light);text-decoration:none}
+
+/* FLOATING */
+.wa-float{position:fixed;bottom:24px;left:24px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 20px rgba(37,211,102,.45);text-decoration:none;z-index:999;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.wa-float:hover{transform:scale(1.13);color:#fff}
+#btt{position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;z-index:999;cursor:pointer;opacity:0;transform:translateY(10px);transition:var(--ease);border:none}
+#btt.vis{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--navy-light)}
+
+/* RESPONSIVE */
+@media(max-width:991px){.mv-wrap{grid-template-columns:1fr}.section-pad{padding:64px 0}}
+@media(max-width:767px){.section-pad{padding:48px 0}.page-hero{padding:120px 0 56px}.cta-btns{flex-direction:column;align-items:center}}
+@media(max-width:575px){.story-num{font-size:56px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="ld-em">دخ</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="container-fluid px-3 px-lg-5">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo" aria-hidden="true">دخ</div>
+      <div><span class="nav-brand-name">دار الخبراء</span><span class="nav-brand-sub">معهد التدريب العالي</span></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false" aria-label="فتح القائمة"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-lnk" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk active" href="about.html">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="programs/index.html">البرامج</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="index.html#corporate">التدريب المؤسسي</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="contact.html">تواصل معنا</a></li>
+        <li class="nav-item d-flex align-items-center"><button class="theme-btn" id="themeBtn" aria-label="تبديل الوضع الليلي"><i class="fas fa-moon"></i></button></li>
+      </ul>
+      <a href="index.html#register" class="btn-nav-cta nav-link ms-lg-3 mt-2 mt-lg-0"><i class="fas fa-pen-to-square me-1"></i>سجّل الآن</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="من نحن">
+  <div class="page-hero-glow pg1" aria-hidden="true"></div>
+  <div class="page-hero-glow pg2" aria-hidden="true"></div>
+  <div class="container page-hero-content">
+    <div class="bc-trail"><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a><i class="fas fa-chevron-left"></i><span>من نحن</span></div>
+    <h1>قصة <span>معهد دار الخبراء</span></h1>
+    <p>منذ عام 2009 ونحن نبني جيلاً من المحترفين المعتمدين الذين يقودون التغيير ويُحققون التميز في مؤسساتهم ومجتمعاتهم</p>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-wrap" aria-label="إحصائيات المعهد">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3" data-aos="fade-up"><div class="stat-box"><div class="stat-ico"><i class="fas fa-users-graduate"></i></div><div class="stat-num"><span class="counter" data-target="5000">0</span><span class="su">+</span></div><div class="stat-lbl">متدرب ناجح</div></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="stat-box"><div class="stat-ico"><i class="fas fa-book-open"></i></div><div class="stat-num"><span class="counter" data-target="45">0</span><span class="su">+</span></div><div class="stat-lbl">برنامج معتمد</div></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="stat-box"><div class="stat-ico"><i class="fas fa-building"></i></div><div class="stat-num"><span class="counter" data-target="200">0</span><span class="su">+</span></div><div class="stat-lbl">جهة مستفيدة</div></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="stat-box"><div class="stat-ico"><i class="fas fa-star"></i></div><div class="stat-num"><span class="counter" data-target="15">0</span><span class="su">+</span></div><div class="stat-lbl">سنة خبرة</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION & VISION -->
+<section class="section-pad bg-page" aria-label="الرؤية والرسالة">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-bullseye"></i> الرؤية والرسالة</div>
+      <h2 class="s-title">لماذا <span>دار الخبراء؟</span></h2>
+      <div class="s-rule mx-auto"></div>
+    </div>
+    <div class="mv-wrap" data-aos="fade-up">
+      <div class="mv-card mv-mission">
+        <i class="fas fa-flag"></i>
+        <h2>رسالتنا</h2>
+        <p>تمكين الأفراد والمؤسسات عبر برامج تدريبية عالية الجودة ومعتمدة دولياً، تجمع بين المعرفة النظرية العميقة والتطبيق العملي الفعلي، لتحقيق التميز المهني وتسريع التنمية الوطنية في إطار رؤية المملكة 2030.</p>
+      </div>
+      <div class="mv-card mv-vision">
+        <i class="fas fa-eye"></i>
+        <h2>رؤيتنا</h2>
+        <p>أن نكون المرجع الأول في التدريب والتطوير المهني على مستوى المملكة العربية السعودية والمنطقة، ونساهم فاعلياً في تأهيل كوادر بشرية مؤهلة ومتميزة تقود مسيرة التنمية في جميع القطاعات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section-pad bg-section" aria-label="قيمنا">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-gem"></i> قيمنا</div>
+      <h2 class="s-title">المبادئ التي <span>تحكم عملنا</span></h2>
+      <div class="s-rule mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-medal"></i></div><h3>الجودة أولاً</h3><p>نضمن أعلى معايير الجودة في كل برنامج تدريبي نُقدّمه، من تصميم المحتوى إلى التنفيذ والتقييم.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-handshake"></i></div><h3>الاحترافية في كل شيء</h3><p>نتعامل مع كل متدرب ومؤسسة باحترافية عالية تعكس التزامنا بالتميز وأخلاقيات المهنة.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-lightbulb"></i></div><h3>الابتكار المستمر</h3><p>نُحدّث مناهجنا وأساليبنا باستمرار لمواكبة أحدث متطلبات سوق العمل وتقنيات التعلم الحديثة.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-shield-halved"></i></div><h3>النزاهة والشفافية</h3><p>نبني علاقاتنا على أسس من الثقة والشفافية التامة مع متدربينا وشركائنا وجميع أصحاب المصلحة.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-people-group"></i></div><h3>الشراكة الاستراتيجية</h3><p>نؤمن بقوة الشراكات مع الجهات الحكومية والخاصة لتحقيق أثر أوسع في تطوير رأس المال البشري.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="value-card"><div class="val-ico"><i class="fas fa-seedling"></i></div><h3>التنمية المستدامة</h3><p>نستثمر في بناء قدرات مستدامة تخدم الفرد والمؤسسة والمجتمع على المدى البعيد.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY / TIMELINE -->
+<section class="section-pad bg-page" aria-label="تاريخنا">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-timeline"></i> قصة النجاح</div>
+      <h2 class="s-title">محطات <span>بارزة في مسيرتنا</span></h2>
+      <div class="s-rule mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="story-card"><span class="story-num" aria-hidden="true">01</span><div class="story-year">2009</div><h3>التأسيس والانطلاق</h3><p>تأسيس معهد دار الخبراء في الرياض بدافع الحاجة لتدريب متخصص يرقى لتطلعات سوق العمل السعودي.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="story-card"><span class="story-num" aria-hidden="true">02</span><div class="story-year">2013</div><h3>الاعتماد الدولي الأول</h3><p>الحصول على اعتماد NEBOSH وانطلاق برامج السلامة والصحة المهنية المعتمدة دولياً لأول مرة.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="story-card"><span class="story-num" aria-hidden="true">03</span><div class="story-year">2018</div><h3>التوسع والشراكات</h3><p>توسع الشراكات لتشمل أرامكو وسابك وعدد من الجهات الحكومية الكبرى. تجاوز عدد المتدربين 2000 متدرب.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="story-card"><span class="story-num" aria-hidden="true">04</span><div class="story-year">2024</div><h3>قيادة التحول الرقمي</h3><p>إطلاق برامج التحول الرقمي والأمن السيبراني والذكاء الاصطناعي تماشياً مع متطلبات رؤية 2030.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section-pad bg-section" aria-label="الكادر التدريبي">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-user-tie"></i> الكادر التدريبي</div>
+      <h2 class="s-title">مدربون <span>من نخبة الخبراء</span></h2>
+      <div class="s-rule mx-auto"></div>
+      <p style="color:var(--muted);font-size:15px;max-width:540px;margin:0 auto">فريق تدريبي احترافي يجمع بين العمق المعرفي والخبرة الميدانية الحقيقية</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="team-card"><div class="team-av"><i class="fas fa-user-tie"></i></div><div class="team-name">م. سعد الزيادي</div><div class="team-title">خبير السلامة المهنية</div><p>مدرب NEBOSH وIIOSH بخبرة 18 عاماً في قطاع النفط والغاز والبتروكيماويات.</p><div class="team-certs"><span class="team-cert">NEBOSH</span><span class="team-cert">IOSH</span><span class="team-cert">IIRSM</span></div></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-card"><div class="team-av"><i class="fas fa-user-tie"></i></div><div class="team-name">د. منال الحربي</div><div class="team-title">قيادة وتطوير مؤسسي</div><p>دكتوراه في الإدارة الاستراتيجية وخبرة 15 عاماً في تطوير القيادات المؤسسية.</p><div class="team-certs"><span class="team-cert">PCC</span><span class="team-cert">MBA</span><span class="team-cert">DBA</span></div></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-card"><div class="team-av"><i class="fas fa-user-tie"></i></div><div class="team-name">م. خالد السبيعي</div><div class="team-title">أمن المعلومات والسيبراني</div><p>مهندس أمن معلومات معتمد CISSP وCEH بخبرة 12 عاماً في تأمين البنى التحتية.</p><div class="team-certs"><span class="team-cert">CISSP</span><span class="team-cert">CEH</span><span class="team-cert">Security+</span></div></div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-card"><div class="team-av"><i class="fas fa-user-tie"></i></div><div class="team-name">د. هند القحطاني</div><div class="team-title">الموارد البشرية والتعلم</div><p>متخصصة في إدارة المواهب والتعلم المؤسسي حاملة PHR وSHRM-CP.</p><div class="team-certs"><span class="team-cert">PHR</span><span class="team-cert">SHRM-CP</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="section-pad bg-page" aria-label="الاعتمادات">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-certificate"></i> الاعتمادات</div>
+      <h2 class="s-title">معتمدون <span>ومعترف بنا دولياً</span></h2>
+      <div class="s-rule mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="fade-up"><div class="accred-card"><div class="accred-ico"><i class="fas fa-certificate"></i></div><h4>المؤسسة العامة للتدريب</h4><p>اعتماد رسمي من المؤسسة العامة للتدريب التقني والمهني</p><span class="accred-badge">رسمي سعودي</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="accred-card"><div class="accred-ico"><i class="fas fa-award"></i></div><h4>ISO 9001:2015</h4><p>شهادة الجودة الدولية في إدارة الجودة والتميز المؤسسي</p><span class="accred-badge">دولي</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="accred-card"><div class="accred-ico"><i class="fas fa-hard-hat"></i></div><h4>NEBOSH International</h4><p>مركز معتمد من NEBOSH لتقديم برامج السلامة المهنية</p><span class="accred-badge">دولي</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="accred-card"><div class="accred-ico"><i class="fas fa-users"></i></div><h4>HRCI International</h4><p>معتمد من المعهد الدولي لاعتماد الموارد البشرية</p><span class="accred-badge">دولي</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container position-relative" style="z-index:2">
+    <h2 class="cta-title">هل أنت مستعد للانضمام <span>لعائلة دار الخبراء؟</span></h2>
+    <p class="cta-desc">انضم لأكثر من 5000 متدرب ناجح وابدأ رحلتك نحو التميز المهني اليوم</p>
+    <div class="cta-btns">
+      <a href="programs/index.html" class="btn-cta-p"><i class="fas fa-book-open"></i>استعرض البرامج</a>
+      <a href="contact.html" class="btn-cta-o"><i class="fas fa-phone"></i>تواصل معنا</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="row g-4">
+  <div class="col-md-4"><a class="f-logo" href="index.html"><div class="f-logo-box">دخ</div><div><strong>دار الخبراء</strong><small>معهد التدريب العالي</small></div></a><p style="font-size:12.5px;line-height:1.75;max-width:240px">معهد تدريب متخصص معتمد يقدم أكثر من 45 برنامجاً تدريبياً معتمداً.</p></div>
+  <div class="col-md-4"><h4 class="f-col-title">صفحات المعهد</h4><ul class="f-list"><li><a href="index.html"><i class="fas fa-chevron-left"></i>الرئيسية</a></li><li><a href="about.html"><i class="fas fa-chevron-left"></i>من نحن</a></li><li><a href="programs/index.html"><i class="fas fa-chevron-left"></i>البرامج التدريبية</a></li><li><a href="contact.html"><i class="fas fa-chevron-left"></i>تواصل معنا</a></li></ul></div>
+  <div class="col-md-4"><h4 class="f-col-title">تواصل معنا</h4><ul class="f-list"><li><a href="tel:+966500000000"><i class="fas fa-phone"></i>+966 50 000 0000</a></li><li><a href="mailto:info@darexpert.com"><i class="fas fa-envelope"></i>info@darexpert.com</a></li><li><a href="https://wa.me/966500000000" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>واتساب</a></li></ul></div>
+</div>
+<div class="footer-bot"><span>© 2026 معهد دار الخبراء العالي للتدريب. جميع الحقوق محفوظة.</span><div style="display:flex;gap:14px"><a href="index.html">الرئيسية</a><a href="programs/index.html">البرامج</a></div></div>
+</div></footer>
+
+<a href="https://wa.me/966500000000" class="wa-float" target="_blank" rel="noopener" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+<button id="btt" aria-label="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+/* دار الخبراء | about.js */
+(function(){const t=localStorage.getItem('dei-theme')||'light';document.documentElement.setAttribute('data-theme',t)})();
+document.addEventListener('DOMContentLoaded',()=>{
+  if(typeof AOS!=='undefined') AOS.init({duration:700,easing:'ease-out-quad',once:true,offset:70});
+  window.addEventListener('load',()=>{const l=document.getElementById('loader');if(l)setTimeout(()=>l.classList.add('hidden'),800)});
+  setTimeout(()=>{const l=document.getElementById('loader');if(l)l.classList.add('hidden')},2400);
+  const nb=document.getElementById('navbar'),btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>{nb&&nb.classList.toggle('scrolled',scrollY>60);btt&&btt.classList.toggle('vis',scrollY>400)},{passive:true});
+  btt?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+  const tb=document.getElementById('themeBtn'),html=document.documentElement;
+  const sv=localStorage.getItem('dei-theme')||'light';
+  if(tb)tb.innerHTML=sv==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+  tb?.addEventListener('click',()=>{const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);localStorage.setItem('dei-theme',t);tb.innerHTML=t==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>'});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}}));
+  const co=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const tgt=parseInt(en.target.dataset.target,10),step=tgt/(1800/16);let c=0;const tm=setInterval(()=>{c=Math.min(c+step,tgt);en.target.textContent=Math.round(c).toLocaleString('ar-SA');if(c>=tgt)clearInterval(tm)},16);co.unobserve(en.target)}}),{threshold:.4});
+  document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+  document.querySelectorAll('#navMain .nav-lnk,#navMain .btn-nav-cta').forEach(l=>l.addEventListener('click',()=>bootstrap.Collapse.getInstance(document.getElementById('navMain'))?.hide()));
+});
+</script>
+</body></html>

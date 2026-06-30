@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B1D5C">
+<title>تواصل معنا | معهد دار الخبراء العالي للتدريب</title>
+<meta name="description" content="تواصل مع معهد دار الخبراء – الهاتف والواتساب والبريد الإلكتروني والعنوان. فريقنا جاهز للإجابة على استفساراتك وتسهيل تسجيلك.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dar-expert-institute.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="تواصل معنا | معهد دار الخبراء">
+<meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D5C;--navy-dark:#071240;--navy-mid:#1A2E6E;--navy-light:#2D4494;
+  --navy-soft:#E8ECFB;--gold:#C8952A;--gold-light:#F0C060;--gold-soft:#FDF5E6;
+  --silver-light:#F4F7FB;--silver-mid:#D6DFF0;--emerald:#0E7B5C;
+  --white:#FFFFFF;--ink:#0E1B3D;--body-text:#3D4F6E;--muted:#7A90AF;
+  --bg-page:#F7F9FF;--bg-section:#EFF3FC;--bg-dark:#071240;
+  --font:'Cairo',sans-serif;
+  --r-sm:10px;--r-md:18px;--r-lg:28px;
+  --s-sm:0 2px 14px rgba(11,29,92,.07);
+  --s-md:0 8px 32px rgba(11,29,92,.11);
+  --s-lg:0 20px 60px rgba(11,29,92,.16);
+  --ease:all .28s cubic-bezier(.4,0,.2,1);
+  --bounce:all .4s cubic-bezier(.34,1.56,.64,1);
+}
+[data-theme="dark"]{
+  --white:#0B1D5C;--ink:#E8F0FF;--body-text:#A8BCDF;--muted:#5872A0;
+  --bg-page:#071240;--bg-section:#0D1F52;
+  --silver-light:#111E4A;--silver-mid:#1A2E6E;--navy-soft:#1A2E6E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);direction:rtl;background:var(--bg-page);color:var(--body-text);overflow-x:hidden;line-height:1.7;transition:background .35s,color .35s}
+#loader{position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s,visibility .6s}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.ld-em{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--navy-dark);margin-bottom:18px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.ld-bar{width:180px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.ld-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));animation:fillbar 1.8s ease forwards}
+@keyframes fillbar{from{width:0}to{width:100%}}
+
+/* NAVBAR */
+#navbar{position:fixed;top:0;right:0;left:0;z-index:1000;padding:13px 0;background:rgba(7,18,64,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06);transition:var(--ease)}
+#navbar.scrolled{padding:9px 0;background:rgba(7,18,64,.97);box-shadow:0 4px 24px rgba(7,18,64,.4)}
+.nav-brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--navy-dark)}
+.nav-brand-name{color:#fff;font-size:13.5px;font-weight:800;display:block}
+.nav-brand-sub{color:var(--gold-light);font-size:10px;opacity:.82}
+.nav-lnk{color:rgba(255,255,255,.78)!important;font-size:13px;font-weight:600;padding:6px 12px!important;border-radius:8px;transition:var(--ease)}
+.nav-lnk:hover,.nav-lnk.active{color:#fff!important;background:rgba(200,149,42,.12)}
+.btn-nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark)!important;font-weight:800!important;padding:8px 20px!important;border-radius:10px!important;font-size:13px!important;transition:var(--bounce)!important;white-space:nowrap}
+.btn-nav-cta:hover{transform:translateY(-2px)!important}
+.theme-btn{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:var(--ease)}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(155deg,#071240 0%,#0B1D5C 50%,#1A2E6E 100%);padding:140px 0 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px}
+.ph-glow{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.phg1{width:500px;height:500px;top:-200px;right:-100px;background:rgba(45,68,148,.2)}
+.phg2{width:300px;height:300px;bottom:-100px;left:-80px;background:rgba(200,149,42,.08)}
+.ph-content{position:relative;z-index:2}
+.bc-trail{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(168,188,223,.6);margin-bottom:14px;flex-wrap:wrap}
+.bc-trail a{color:rgba(168,188,223,.6);text-decoration:none;transition:var(--ease)}
+.bc-trail a:hover{color:var(--gold-light)}
+.bc-trail i{font-size:9px;color:rgba(168,188,223,.35)}
+.page-hero h1{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:14px}
+.page-hero h1 span{color:var(--gold-light)}
+.page-hero p{font-size:15.5px;color:rgba(168,188,223,.85);max-width:560px;line-height:1.85}
+
+/* CONTACT CARDS */
+.ci-card{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:28px 22px;box-shadow:var(--s-sm);height:100%;transition:var(--ease);text-align:center}
+.ci-card:hover{box-shadow:var(--s-md);transform:translateY(-5px);border-color:var(--navy-soft)}
+.ci-ico{width:58px;height:58px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 16px;transition:var(--ease)}
+.ci-ico-navy{background:var(--navy-soft);color:var(--navy-light)}
+.ci-ico-green{background:#E7F9EE;color:var(--emerald)}
+.ci-ico-gold{background:var(--gold-soft);color:var(--gold)}
+.ci-ico-red{background:#FEE2E2;color:#DC2626}
+.ci-card:hover .ci-ico{background:var(--navy);color:#fff}
+.ci-card:hover .ci-ico-green{background:var(--emerald);color:#fff}
+.ci-lbl{font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.ci-val{font-size:15px;font-weight:700;color:var(--ink);line-height:1.6}
+.ci-val a{color:var(--navy-light);text-decoration:none;transition:var(--ease)}
+.ci-val a:hover{color:var(--navy)}
+.ci-note{font-size:12px;color:var(--muted);margin-top:8px}
+[data-theme="dark"] .ci-card{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* FORM */
+.form-wrap{background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--s-lg);border:1px solid var(--silver-mid)}
+.form-sidebar{background:linear-gradient(155deg,var(--navy-dark),var(--navy-mid));padding:44px 36px;position:relative;overflow:hidden;height:100%}
+.form-sidebar::before{content:'';position:absolute;top:-70px;left:-70px;width:220px;height:220px;border-radius:50%;background:rgba(200,149,42,.1);filter:blur(40px)}
+.form-sidebar h3{font-size:22px;font-weight:900;color:var(--gold-light);margin-bottom:8px;position:relative;z-index:1}
+.form-sidebar>p{font-size:13.5px;color:rgba(168,188,223,.8);margin-bottom:32px;position:relative;z-index:1}
+.fs-item{display:flex;align-items:flex-start;gap:13px;margin-bottom:22px;position:relative;z-index:1}
+.fs-ico{width:38px;height:38px;border-radius:50%;background:rgba(200,149,42,.2);border:2px solid rgba(200,149,42,.4);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold-light);flex-shrink:0}
+.fs-item strong{display:block;color:#fff;font-size:13.5px;margin-bottom:2px}
+.fs-item span{color:rgba(168,188,223,.7);font-size:12px}
+.form-body{padding:40px 36px}
+.fgrp{margin-bottom:20px}
+.fgrp label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.finp,.fsel{width:100%;padding:12px 15px;border:1.5px solid var(--silver-mid);border-radius:10px;font-family:var(--font);font-size:13.5px;color:var(--ink);background:var(--white);transition:var(--ease);appearance:none}
+.finp:focus,.fsel:focus{outline:none;border-color:var(--navy-light);box-shadow:0 0 0 3px rgba(11,29,92,.1)}
+.finp::placeholder{color:var(--muted)}
+textarea.finp{resize:vertical;min-height:110px}
+.btn-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff;border:none;border-radius:11px;font-weight:800;font-size:15px;cursor:pointer;font-family:var(--font);transition:var(--ease);box-shadow:0 6px 22px rgba(11,29,92,.35)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,29,92,.4)}
+.form-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
+.form-note i{color:var(--emerald)}
+[data-theme="dark"] .form-wrap{border-color:rgba(45,68,148,.4)}
+[data-theme="dark"] .finp,[data-theme="dark"] .fsel{background:#0D1F52;border-color:rgba(45,68,148,.5);color:var(--ink)}
+
+/* MAP */
+.map-wrap{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--silver-mid);background:linear-gradient(135deg,var(--navy-soft),var(--silver-light));min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--navy-light)}
+.map-wrap i{font-size:40px;opacity:.35}
+.map-wrap strong{font-size:15px;font-weight:700}
+.map-wrap span{font-size:13px;color:var(--muted)}
+
+/* FAQ */
+.faq-item{background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-sm);margin-bottom:11px;overflow:hidden;transition:var(--ease)}
+.faq-item.open{border-color:var(--navy-soft);box-shadow:var(--s-sm)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-size:14.5px;font-weight:700;color:var(--ink);gap:12px;transition:var(--ease)}
+.faq-item.open .faq-q{color:var(--navy)}
+.faq-ico{width:28px;height:28px;border-radius:7px;background:var(--navy-soft);color:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;transition:var(--ease)}
+.faq-item.open .faq-ico{background:var(--navy);color:#fff;transform:rotate(45deg)}
+.faq-ans{display:none;padding:0 20px 16px;font-size:13.5px;color:var(--body-text);line-height:1.85}
+.faq-item.open .faq-ans{display:block}
+[data-theme="dark"] .faq-item{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* SOCIAL */
+.social-btn{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:16px 20px;text-decoration:none;transition:var(--ease);box-shadow:var(--s-sm)}
+.social-btn:hover{box-shadow:var(--s-md);transform:translateY(-3px)}
+.sb-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.sb-x{background:#000;color:#fff}
+.sb-li{background:#0077B5;color:#fff}
+.sb-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.sb-yt{background:#FF0000;color:#fff}
+.sb-wa{background:#25D366;color:#fff}
+.social-btn strong{color:var(--ink);font-size:14px;display:block;font-weight:700}
+.social-btn span{color:var(--muted);font-size:12px}
+[data-theme="dark"] .social-btn{background:#0D1F52;border-color:rgba(45,68,148,.4)}
+
+/* FOOTER */
+.footer{background:var(--navy-dark);color:rgba(168,188,223,.75);padding:48px 0 0}
+.f-logo{display:flex;align-items:center;gap:11px;margin-bottom:13px;text-decoration:none}
+.f-logo-box{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--navy-dark)}
+.f-logo strong{color:#fff;font-size:13px;font-weight:800;display:block}
+.f-logo small{color:var(--gold-light);font-size:9.5px;opacity:.82}
+.f-col-title{color:#fff;font-size:13px;font-weight:800;margin-bottom:16px;position:relative;padding-bottom:8px}
+.f-col-title::after{content:'';position:absolute;bottom:0;right:0;width:24px;height:2px;background:var(--gold);border-radius:2px}
+.f-list{list-style:none}
+.f-list li{margin-bottom:8px}
+.f-list li a{color:rgba(168,188,223,.7);font-size:12.5px;text-decoration:none;transition:var(--ease);display:flex;align-items:center;gap:5px}
+.f-list li a:hover{color:var(--gold-light)}
+.f-list li a i{font-size:10px;color:var(--gold);opacity:.7}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);margin-top:36px;padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
+.footer-bot a{color:var(--gold-light);text-decoration:none}
+
+/* FLOATING */
+.wa-float{position:fixed;bottom:24px;left:24px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 20px rgba(37,211,102,.45);text-decoration:none;z-index:999;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.wa-float:hover{transform:scale(1.13);color:#fff}
+#btt{position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;z-index:999;cursor:pointer;opacity:0;transform:translateY(10px);transition:var(--ease);border:none}
+#btt.vis{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--navy-light)}
+
+/* SECTIONS */
+.section-pad{padding:80px 0}
+.bg-page{background:var(--bg-page)}
+.bg-section{background:var(--bg-section)}
+.s-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--navy-soft);color:var(--navy-light);padding:5px 15px;border-radius:30px;font-size:11.5px;font-weight:700;margin-bottom:12px}
+.s-title{font-size:clamp(22px,2.8vw,36px);font-weight:900;color:var(--ink);line-height:1.3;margin-bottom:10px}
+.s-title span{color:var(--navy-light)}
+.s-rule{width:46px;height:3px;background:linear-gradient(90deg,var(--gold),var(--navy-light));border-radius:3px;margin-bottom:16px}
+
+@media(max-width:991px){.section-pad{padding:56px 0}.form-sidebar{padding:28px 22px}.form-body{padding:28px 22px}}
+@media(max-width:767px){.section-pad{padding:44px 0}.page-hero{padding:120px 0 48px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="ld-em">دخ</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <div class="container-fluid px-3 px-lg-5">
+    <a class="nav-brand" href="index.html"><div class="nav-logo">دخ</div><div><span class="nav-brand-name">دار الخبراء</span><span class="nav-brand-sub">معهد التدريب العالي</span></div></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false" aria-label="القائمة"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-lnk" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="about.html">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="programs/index.html">البرامج</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="index.html#corporate">التدريب المؤسسي</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk active" href="contact.html">تواصل معنا</a></li>
+        <li class="nav-item d-flex align-items-center"><button class="theme-btn" id="themeBtn" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button></li>
+      </ul>
+      <a href="index.html#register" class="btn-nav-cta nav-link ms-lg-3 mt-2 mt-lg-0"><i class="fas fa-pen-to-square me-1"></i>سجّل الآن</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ph-glow phg1" aria-hidden="true"></div>
+  <div class="ph-glow phg2" aria-hidden="true"></div>
+  <div class="container ph-content">
+    <div class="bc-trail"><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a><i class="fas fa-chevron-left"></i><span>تواصل معنا</span></div>
+    <h1>نحن هنا <span>لمساعدتك</span></h1>
+    <p>فريقنا المتخصص جاهز للإجابة على جميع استفساراتك ومساعدتك في اختيار البرنامج التدريبي المناسب لأهدافك</p>
+  </div>
+</section>
+
+<!-- CONTACT CARDS -->
+<section class="section-pad bg-page">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="ci-card">
+          <div class="ci-ico ci-ico-navy"><i class="fas fa-phone"></i></div>
+          <div class="ci-lbl">الهاتف</div>
+          <div class="ci-val"><a href="tel:+966500000000">+966 50 000 0000</a><br><a href="tel:+966114000000">+966 11 400 0000</a></div>
+          <div class="ci-note">السبت – الأربعاء: 8ص – 9م</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="ci-card">
+          <div class="ci-ico ci-ico-green"><i class="fab fa-whatsapp"></i></div>
+          <div class="ci-lbl">واتساب للتسجيل</div>
+          <div class="ci-val"><a href="https://wa.me/966500000000" target="_blank" rel="noopener">+966 50 000 0000</a></div>
+          <div class="ci-note">رد فوري خلال دقائق</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="ci-card">
+          <div class="ci-ico ci-ico-navy"><i class="fas fa-envelope"></i></div>
+          <div class="ci-lbl">البريد الإلكتروني</div>
+          <div class="ci-val"><a href="mailto:info@darexpert.com">info@darexpert.com</a><br><a href="mailto:training@darexpert.com">training@darexpert.com</a></div>
+          <div class="ci-note">رد خلال 24 ساعة</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="ci-card">
+          <div class="ci-ico ci-ico-gold"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ci-lbl">العنوان</div>
+          <div class="ci-val">الرياض – حي النخيل<br>شارع الملك فهد</div>
+          <div class="ci-note">المملكة العربية السعودية</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM + MAP -->
+    <div class="row g-4">
+      <!-- FORM -->
+      <div class="col-lg-7" data-aos="fade-up">
+        <div class="form-wrap d-flex flex-column flex-md-row">
+          <div class="form-sidebar col-md-5">
+            <h3>ابعث لنا رسالة</h3>
+            <p>سيتواصل معك فريقنا خلال 24 ساعة</p>
+            <div class="fs-item"><div class="fs-ico"><i class="fas fa-clock"></i></div><div><strong>استجابة سريعة</strong><span>خلال 24 ساعة في أيام العمل</span></div></div>
+            <div class="fs-item"><div class="fs-ico"><i class="fas fa-user-tie"></i></div><div><strong>مستشار متخصص</strong><span>يساعدك في اختيار البرنامج المناسب</span></div></div>
+            <div class="fs-item"><div class="fs-ico"><i class="fas fa-shield-halved"></i></div><div><strong>بياناتك محمية</strong><span>لا نشارك معلوماتك مع أي جهة</span></div></div>
+            <div class="fs-item"><div class="fs-ico"><i class="fas fa-gift"></i></div><div><strong>استشارة مجانية</strong><span>الاستشارة التدريبية مجانية تماماً</span></div></div>
+          </div>
+          <div class="form-body col-md-7">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="fgrp"><label for="cName">الاسم الكامل *</label><input class="finp" type="text" id="cName" placeholder="أدخل اسمك الكامل" required autocomplete="name"></div>
+                </div>
+                <div class="col-md-6">
+                  <div class="fgrp"><label for="cPhone">رقم الجوال *</label><input class="finp" type="tel" id="cPhone" placeholder="05xxxxxxxx" required pattern="05[0-9]{8}" autocomplete="tel"></div>
+                </div>
+                <div class="col-12">
+                  <div class="fgrp"><label for="cEmail">البريد الإلكتروني *</label><input class="finp" type="email" id="cEmail" placeholder="example@email.com" required autocomplete="email"></div>
+                </div>
+                <div class="col-12">
+                  <div class="fgrp"><label for="cSubject">الموضوع</label>
+                    <select class="fsel" id="cSubject">
+                      <option value="">-- اختر الموضوع --</option>
+                      <option>استفسار عن برنامج تدريبي</option>
+                      <option>طلب تدريب مؤسسي</option>
+                      <option>استشارة تدريبية</option>
+                      <option>التسجيل في برنامج</option>
+                      <option>شراكة استراتيجية</option>
+                      <option>أخرى</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="fgrp"><label for="cMsg">رسالتك *</label><textarea class="finp" id="cMsg" rows="4" placeholder="اكتب رسالتك هنا…" required></textarea></div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-submit"><i class="fas fa-paper-plane me-2"></i>أرسل الرسالة</button>
+                  <div class="form-note"><i class="fas fa-lock"></i>بياناتك محمية – لن نشاركها مع أي جهة</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP + HOURS -->
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="map-wrap mb-4">
+          <i class="fas fa-map-marker-alt"></i>
+          <strong>الرياض – حي النخيل</strong>
+          <span>شارع الملك فهد، المملكة العربية السعودية</span>
+        </div>
+        <!-- Working Hours -->
+        <div style="background:var(--white);border:1px solid var(--silver-mid);border-radius:var(--r-md);padding:22px;box-shadow:var(--s-sm)">
+          <h4 style="font-size:15px;font-weight:800;color:var(--ink);margin-bottom:16px"><i class="fas fa-clock me-2" style="color:var(--navy-light)"></i>ساعات العمل</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--silver-mid)"><span style="font-size:13.5px;font-weight:600;color:var(--ink)">السبت – الأربعاء</span><span style="font-size:13px;color:var(--navy-light);font-weight:700;background:var(--navy-soft);padding:4px 12px;border-radius:20px">8:00 ص – 9:00 م</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--silver-mid)"><span style="font-size:13.5px;font-weight:600;color:var(--ink)">الخميس</span><span style="font-size:13px;color:var(--navy-light);font-weight:700;background:var(--navy-soft);padding:4px 12px;border-radius:20px">8:00 ص – 5:00 م</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0"><span style="font-size:13.5px;font-weight:600;color:var(--ink)">الجمعة</span><span style="font-size:13px;color:#DC2626;font-weight:700;background:#FEE2E2;padding:4px 12px;border-radius:20px">مغلق</span></div>
+          </div>
+          <a href="https://wa.me/966500000000" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;border-radius:10px;padding:12px 16px;text-decoration:none;font-weight:700;font-size:14px;margin-top:16px;transition:var(--ease);justify-content:center">
+            <i class="fab fa-whatsapp" style="font-size:18px"></i>تواصل عبر واتساب الآن
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="section-pad bg-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-share-nodes"></i> وسائل التواصل</div>
+      <h2 class="s-title">تابعنا على <span>وسائل التواصل الاجتماعي</span></h2>
+      <div class="s-rule mx-auto"></div>
+      <p style="color:var(--muted);font-size:15px;max-width:480px;margin:0 auto">ابق على تواصل معنا واطّلع على آخر برامجنا وفعالياتنا وأخبارنا أولاً بأول</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <a href="#" class="social-btn"><div class="sb-ico sb-x"><i class="fab fa-x-twitter"></i></div><div><strong>تويتر X</strong><span>@darexpert_sa</span></div></a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="social-btn"><div class="sb-ico sb-li"><i class="fab fa-linkedin-in"></i></div><div><strong>لينكدإن</strong><span>Dar Expert Institute</span></div></a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="#" class="social-btn"><div class="sb-ico sb-ig"><i class="fab fa-instagram"></i></div><div><strong>إنستغرام</strong><span>@darexpert_sa</span></div></a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="#" class="social-btn"><div class="sb-ico sb-yt"><i class="fab fa-youtube"></i></div><div><strong>يوتيوب</strong><span>Dar Expert Institute</span></div></a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://wa.me/966500000000" target="_blank" rel="noopener" class="social-btn"><div class="sb-ico sb-wa"><i class="fab fa-whatsapp"></i></div><div><strong>واتساب</strong><span>+966 50 000 0000</span></div></a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <a href="mailto:info@darexpert.com" class="social-btn"><div class="sb-ico" style="background:var(--navy-soft);color:var(--navy)"><i class="fas fa-envelope"></i></div><div><strong>البريد الإلكتروني</strong><span>info@darexpert.com</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad bg-page">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-eyebrow"><i class="fas fa-circle-question"></i> أسئلة شائعة</div>
+      <h2 class="s-title">أسئلة حول <span>التواصل والخدمات</span></h2>
+      <div class="s-rule mx-auto"></div>
+    </div>
+    <div class="row justify-content-center"><div class="col-lg-8" data-aos="fade-up">
+      <div class="faq-item open">
+        <div class="faq-q" role="button" tabindex="0">ما أسرع طريقة للتواصل معكم؟<div class="faq-ico"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-ans">أسرع طريقة هي التواصل عبر واتساب على الرقم +966 50 000 0000. فريقنا يرد خلال دقائق في أوقات الدوام الرسمي. يمكنك أيضاً الاتصال المباشر.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0">هل يمكنني زيارة المعهد مباشرة؟<div class="faq-ico"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-ans">نعم، يسعدنا استقبالك في مقر المعهد بالرياض خلال ساعات العمل السبت إلى الأربعاء من 8ص إلى 9م. ننصح بالتواصل المسبق لتحديد موعد مع أحد مستشارينا التدريبيين.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0">كم يستغرق الرد على الاستفسارات؟<div class="faq-ico"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-ans">نلتزم بالرد على جميع الاستفسارات خلال 24 ساعة في أيام العمل. لطلبات التدريب المؤسسي والشراكات، يتواصل معك مستشارنا المتخصص خلال نفس اليوم.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0">هل تقدمون استشارات تدريبية مجانية؟<div class="faq-ico"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-ans">نعم، نُقدّم استشارة تدريبية مجانية لمساعدتك في تحديد البرنامج الأنسب لأهدافك ومستواك وميزانيتك. تواصل معنا لحجز جلستك الاستشارية المجانية.</div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="row g-4">
+  <div class="col-md-4"><a class="f-logo" href="index.html"><div class="f-logo-box">دخ</div><div><strong>دار الخبراء</strong><small>معهد التدريب العالي</small></div></a><p style="font-size:12.5px;color:rgba(168,188,223,.75);line-height:1.75">معهد تدريب متخصص معتمد – 45+ برنامجاً تدريبياً.</p></div>
+  <div class="col-md-4"><h4 class="f-col-title">روابط سريعة</h4><ul class="f-list"><li><a href="index.html"><i class="fas fa-chevron-left"></i>الرئيسية</a></li><li><a href="about.html"><i class="fas fa-chevron-left"></i>من نحن</a></li><li><a href="programs/index.html"><i class="fas fa-chevron-left"></i>البرامج التدريبية</a></li><li><a href="index.html#corporate"><i class="fas fa-chevron-left"></i>التدريب المؤسسي</a></li></ul></div>
+  <div class="col-md-4"><h4 class="f-col-title">تواصل معنا</h4><ul class="f-list"><li><a href="tel:+966500000000"><i class="fas fa-phone"></i>+966 50 000 0000</a></li><li><a href="mailto:info@darexpert.com"><i class="fas fa-envelope"></i>info@darexpert.com</a></li><li><a href="https://wa.me/966500000000" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>واتساب</a></li><li><a href="#"><i class="fas fa-map-marker-alt"></i>الرياض – حي النخيل</a></li></ul></div>
+</div>
+<div class="footer-bot"><span>© 2026 معهد دار الخبراء العالي للتدريب. جميع الحقوق محفوظة.</span><div style="display:flex;gap:14px"><a href="index.html">الرئيسية</a><a href="programs/index.html">البرامج</a></div></div>
+</div></footer>
+
+<a href="https://wa.me/966500000000" class="wa-float" target="_blank" rel="noopener" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+<button id="btt" aria-label="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+(function(){const t=localStorage.getItem('dei-theme')||'light';document.documentElement.setAttribute('data-theme',t)})();
+document.addEventListener('DOMContentLoaded',()=>{
+  if(typeof AOS!=='undefined') AOS.init({duration:700,easing:'ease-out-quad',once:true,offset:70});
+  window.addEventListener('load',()=>{const l=document.getElementById('loader');if(l)setTimeout(()=>l.classList.add('hidden'),800)});
+  setTimeout(()=>{const l=document.getElementById('loader');if(l)l.classList.add('hidden')},2400);
+  const nb=document.getElementById('navbar'),btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>{nb&&nb.classList.toggle('scrolled',scrollY>60);btt&&btt.classList.toggle('vis',scrollY>400)},{passive:true});
+  btt?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+  const tb=document.getElementById('themeBtn'),html=document.documentElement;
+  const sv=localStorage.getItem('dei-theme')||'light';
+  if(tb)tb.innerHTML=sv==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+  tb?.addEventListener('click',()=>{const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);localStorage.setItem('dei-theme',t);tb.innerHTML=t==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>'});
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    const tog=()=>{const it=q.closest('.faq-item'),was=it.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!was)it.classList.add('open')};
+    q.addEventListener('click',tog);q.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+  });
+  // Toast
+  function toast(m,s=true){const d=document.createElement('div');d.style.cssText=`position:fixed;top:88px;left:50%;transform:translateX(-50%);background:${s?'#0E7B5C':'#DC2626'};color:#fff;padding:13px 26px;border-radius:11px;font-family:Cairo,sans-serif;font-weight:700;font-size:14px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.3)`;d.setAttribute('role','alert');d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),4000)}
+  // Form
+  document.getElementById('contactForm')?.addEventListener('submit',e=>{
+    e.preventDefault();
+    e.target.checkValidity()?(toast('✓ تم إرسال رسالتك! سيتواصل معك فريقنا خلال 24 ساعة.'),e.target.reset()):e.target.classList.add('was-validated');
+  });
+  document.querySelectorAll('#navMain .nav-lnk,#navMain .btn-nav-cta').forEach(l=>l.addEventListener('click',()=>bootstrap.Collapse.getInstance(document.getElementById('navMain'))?.hide()));
+});
+</script>
+</body></html>
