@@ -1,0 +1,10 @@
+# robots.txt – معهد دار الخبراء العالي للتدريب
+User-agent: *
+Allow: /
+
+# منع فهرسة الملفات غير الضرورية
+Disallow: /docs/
+Disallow: /data/
+Disallow: /*.json$
+
+Sitemap: https://dar-expert-institute.com/sitemap.xml
