@@ -166,6 +166,66 @@ body{font-family:var(--font);direction:rtl;background:var(--bg-page);color:var(-
 @media(max-width:991px){.sp{padding:60px 0}}
 @media(max-width:767px){.sp{padding:44px 0}.page-hero{padding:120px 0 56px}.case-results{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* ============================================================
+   MOBILE NAV FIX
+   ============================================================ */
+@media(max-width:991px){
+  .navbar-collapse{
+    background:rgba(7,18,64,.98);
+    border-top:1px solid rgba(255,255,255,.08);
+    border-radius:0 0 16px 16px;
+    padding:14px 16px 18px;
+    margin-top:8px;
+    box-shadow:0 12px 32px rgba(7,18,64,.5);
+  }
+  .navbar-collapse .navbar-nav{
+    gap:4px !important;
+  }
+  .navbar-collapse .nav-lnk{
+    display:block;
+    color:rgba(255,255,255,.88) !important;
+    padding:10px 14px !important;
+    border-radius:9px;
+    font-size:14px !important;
+  }
+  .navbar-collapse .nav-lnk:hover,
+  .navbar-collapse .nav-lnk.active{
+    background:rgba(200,149,42,.18) !important;
+    color:#fff !important;
+  }
+  .navbar-collapse .btn-nav-cta{
+    margin-top:8px;
+    display:block;
+    text-align:center;
+    border-radius:10px !important;
+  }
+  .navbar-collapse .theme-btn{
+    margin-top:4px;
+    width:100%;
+    justify-content:center;
+  }
+}
+
+/* Fix hamburger icon visibility on dark background */
+.navbar-toggler{
+  color:rgba(255,255,255,.8) !important;
+  border-color:rgba(255,255,255,.25) !important;
+}
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Prevent horizontal scroll */
+html,body{ max-width:100%; overflow-x:hidden; }
+
+/* Mobile general */
+@media(max-width:767px){
+  .frow{ grid-template-columns:1fr !important; }
+  .cta-btns{ flex-direction:column; align-items:center; }
+  .hero-btns{ flex-direction:column; align-items:stretch; }
+  .btn-hp,.btn-ho{ justify-content:center; text-align:center; }
+  .footer-bot{ flex-direction:column; text-align:center; gap:8px; }
+}
 </style>
 </head>
 <body>
