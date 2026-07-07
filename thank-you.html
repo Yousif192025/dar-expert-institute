@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1D5C">
+<title>شكراً لتسجيلك | معهد دار الخبراء</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--navy:#0B1D5C;--navy-dark:#071240;--navy-mid:#1A2E6E;--navy-light:#2D4494;
+  --navy-soft:#E8ECFB;--gold:#C8952A;--gold-light:#F0C060;--emerald:#0E7B5C;
+  --silver-mid:#D6DFF0;--white:#FFFFFF;--ink:#0E1B3D;--muted:#7A90AF;
+  --font:'Cairo',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:var(--font);direction:rtl;overflow-x:hidden}
+body{background:linear-gradient(155deg,#071240 0%,#0B1D5C 50%,#1A2E6E 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;padding:24px;position:relative}
+body::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px}
+.wrap{position:relative;z-index:2;text-align:center;max-width:580px;width:100%}
+/* Success checkmark animation */
+.check-circle{width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,var(--emerald),#22C55E);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 24px;
+  box-shadow:0 0 0 0 rgba(14,123,92,.4);animation:ping 1.5s ease-out .3s both}
+@keyframes ping{0%{transform:scale(0);opacity:0}60%{transform:scale(1.08);box-shadow:0 0 0 20px rgba(14,123,92,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(14,123,92,0);opacity:1}}
+.check-circle i{font-size:40px;color:#fff;animation:check-in .4s ease .7s both}
+@keyframes check-in{from{transform:scale(0) rotate(-180deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+.badge-new{display:inline-flex;align-items:center;gap:7px;
+  background:rgba(200,149,42,.18);border:1px solid rgba(200,149,42,.4);
+  color:var(--gold-light);padding:5px 16px;border-radius:30px;
+  font-size:12px;font-weight:700;margin-bottom:18px;animation:fade-up .6s .2s both}
+@keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:clamp(24px,4vw,36px);font-weight:900;color:#fff;margin-bottom:10px;
+  animation:fade-up .6s .4s both}
+h1 span{color:var(--gold-light)}
+.subtitle{font-size:15px;color:rgba(168,188,223,.85);line-height:1.8;
+  margin-bottom:32px;animation:fade-up .6s .5s both}
+/* Steps */
+.steps{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;padding:26px 22px;margin-bottom:28px;text-align:right;
+  animation:fade-up .6s .6s both}
+.steps h3{color:var(--gold-light);font-size:14px;font-weight:800;margin-bottom:16px;text-align:center}
+.step{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px}
+.step:last-child{margin-bottom:0}
+.step-num{width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;color:var(--navy-dark);flex-shrink:0}
+.step strong{display:block;color:#fff;font-size:13.5px;margin-bottom:2px}
+.step span{color:rgba(168,188,223,.7);font-size:12px}
+/* Countdown */
+.countdown-wrap{background:rgba(200,149,42,.1);border:1px solid rgba(200,149,42,.25);
+  border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;
+  align-items:center;gap:10px;animation:fade-up .6s .7s both}
+.countdown-wrap i{color:var(--gold-light);font-size:20px;flex-shrink:0}
+.countdown-wrap p{color:rgba(168,188,223,.9);font-size:13.5px;margin:0}
+.countdown-wrap span{color:var(--gold-light);font-weight:800}
+/* Buttons */
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  animation:fade-up .6s .8s both}
+.btn-p{display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy-dark);border:none;padding:13px 26px;border-radius:12px;
+  font-weight:800;font-size:14px;text-decoration:none;font-family:var(--font);
+  transition:transform .3s}
+.btn-p:hover{transform:translateY(-3px);color:var(--navy-dark)}
+.btn-o{display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.08);color:#fff;
+  border:1.5px solid rgba(255,255,255,.22);padding:12px 22px;border-radius:12px;
+  font-weight:600;font-size:14px;text-decoration:none;font-family:var(--font);
+  transition:background .3s}
+.btn-o:hover{background:rgba(255,255,255,.16);color:#fff}
+/* Brand */
+.brand{position:absolute;top:24px;right:24px;display:flex;align-items:center;gap:10px;text-decoration:none}
+.b-logo{width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--navy-dark)}
+.b-name{color:#fff;font-size:13px;font-weight:800}
+@media(max-width:480px){.btns{flex-direction:column;align-items:center}.step{gap:10px}}
+</style>
+</head>
+<body>
+<a class="brand" href="index.html"><div class="b-logo">دخ</div><span class="b-name">دار الخبراء</span></a>
+<div class="wrap">
+  <div class="check-circle"><i class="fas fa-check"></i></div>
+  <div class="badge-new"><i class="fas fa-star"></i> طلبك في طريقه إلينا</div>
+  <h1>شكراً لتسجيلك <span>معنا!</span></h1>
+  <p class="subtitle">تم استقبال طلبك بنجاح. سيتواصل معك أحد مستشارينا التدريبيين خلال 24 ساعة من أيام العمل لتأكيد التسجيل وتزويدك بكافة التفاصيل.</p>
+  <div class="steps">
+    <h3>ماذا يحدث الآن؟</h3>
+    <div class="step"><div class="step-num">1</div><div><strong>مراجعة طلبك</strong><span>فريقنا يراجع بياناتك ويُجهّز الملف التدريبي المناسب لك</span></div></div>
+    <div class="step"><div class="step-num">2</div><div><strong>التواصل معك</strong><span>مستشار متخصص يتصل بك على الرقم المُدخَّل خلال 24 ساعة</span></div></div>
+    <div class="step"><div class="step-num">3</div><div><strong>تأكيد التسجيل</strong><span>تأكيد الموعد والجدول الزمني وإرسال مواد البرنامج</span></div></div>
+  </div>
+  <div class="countdown-wrap">
+    <i class="fas fa-clock"></i>
+    <p>سيتواصل معك فريقنا خلال <span>24 ساعة</span> — تحقق من بريدك الإلكتروني أيضاً</p>
+  </div>
+  <div class="btns">
+    <a href="programs/index.html" class="btn-p"><i class="fas fa-book-open"></i>استعرض البرامج</a>
+    <a href="https://wa.me/966500000000" class="btn-o" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>تواصل عبر واتساب</a>
+    <a href="index.html" class="btn-o"><i class="fas fa-home"></i>الرئيسية</a>
+  </div>
+</div>
+<script>
+// Auto-redirect after 60 seconds
+let t = 60;
+const tick = setInterval(()=>{t--;if(t<=0){clearInterval(tick);location.href='index.html'}},1000);
+</script>
+</body></html>

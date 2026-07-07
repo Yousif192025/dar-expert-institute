@@ -183,69 +183,213 @@ textarea.finp{resize:vertical;min-height:110px}
 @media(max-width:991px){.section-pad{padding:56px 0}.form-sidebar{padding:28px 22px}.form-body{padding:28px 22px}}
 @media(max-width:767px){.section-pad{padding:44px 0}.page-hero{padding:120px 0 48px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
 /* ============================================================
-   MOBILE NAV FIX
+   FORM UX IMPROVEMENTS – v2.0
+   ============================================================ */
+
+/* Input focus glow effect */
+.finp:focus,.fsel:focus{
+  border-color:var(--navy-light) !important;
+  box-shadow:0 0 0 3px rgba(45,68,148,.15) !important;
+  outline:none;
+}
+
+/* Input validation states */
+.finp.is-valid,.fsel.is-valid{
+  border-color:var(--emerald) !important;
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%230E7B5C' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 8 4 4 8-8'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;
+  background-position:left 12px center;
+  background-size:16px;
+}
+.finp.is-invalid{
+  border-color:#DC2626 !important;
+  box-shadow:0 0 0 3px rgba(220,38,38,.1) !important;
+}
+
+/* Character counter */
+.char-counter{
+  font-size:11.5px;
+  color:var(--muted);
+  text-align:left;
+  margin-top:4px;
+}
+.char-counter.warning{color:var(--gold)}
+.char-counter.danger{color:#DC2626}
+
+/* Submit button loading state */
+.btn-submit.loading,.btn-req.loading{
+  position:relative;
+  pointer-events:none;
+  opacity:.85;
+}
+.btn-submit.loading::after,.btn-req.loading::after{
+  content:'';
+  width:16px;height:16px;
+  border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* Form success banner */
+.form-success-banner{
+  background:linear-gradient(135deg,var(--emerald),#22C55E);
+  color:#fff;border-radius:12px;padding:16px 20px;
+  display:flex;align-items:center;gap:12px;
+  font-size:14px;font-weight:700;margin-top:12px;
+  animation:slide-in .4s ease;
+}
+@keyframes slide-in{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.form-success-banner i{font-size:22px;flex-shrink:0}
+
+/* Floating label feel for inputs */
+.fgrp{position:relative}
+.fgrp label{
+  transition:all .2s;
+  font-weight:700;
+}
+
+/* Phone input direction fix */
+input[type="tel"]{direction:ltr;text-align:right}
+
+/* Select arrow custom */
+.fsel{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%237A90AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;
+  background-position:left 12px center;
+  background-size:14px;
+  padding-left:36px;
+}
+
+/* Progress steps for multi-step forms */
+.form-progress{
+  display:flex;align-items:center;gap:0;margin-bottom:24px;
+}
+.fp-step{
+  flex:1;text-align:center;position:relative;
+}
+.fp-step::before{
+  content:'';position:absolute;top:18px;right:50%;width:100%;
+  height:2px;background:var(--silver-mid);z-index:0;
+}
+.fp-step:first-child::before{display:none}
+.fp-num{
+  width:36px;height:36px;border-radius:50%;background:var(--silver-mid);
+  color:var(--muted);display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;margin:0 auto 6px;position:relative;z-index:1;
+  transition:all .3s;
+}
+.fp-step.active .fp-num{background:var(--navy);color:#fff}
+.fp-step.done .fp-num{background:var(--emerald);color:#fff}
+.fp-label{font-size:11px;color:var(--muted);font-weight:600}
+.fp-step.active .fp-label{color:var(--navy);font-weight:800}
+
+
+/* ============================================================
+   MEGA MENU STYLES
+   ============================================================ */
+.mega-wrap{position:relative}
+.mega-drop{
+  display:none;position:absolute;top:calc(100% + 10px);right:-20px;
+  width:520px;background:var(--white);border-radius:var(--r-md);
+  box-shadow:var(--s-lg);padding:20px 16px;z-index:9999;
+  border:1px solid var(--silver-mid);
+  animation:mega-in .2s ease both;
+}
+.mega-wrap:hover .mega-drop,.mega-wrap:focus-within .mega-drop{display:block}
+@keyframes mega-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.mega-cat{font-size:10.5px;font-weight:700;letter-spacing:.07em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;
+  border-bottom:1px solid var(--silver-mid)}
+.mega-lnk{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:8px;
+  color:var(--body-text);font-size:13px;font-weight:600;text-decoration:none;transition:var(--ease)}
+.mega-lnk:hover{background:var(--navy-soft);color:var(--navy)}
+.mega-ico{width:30px;height:30px;border-radius:7px;background:var(--navy-soft);
+  color:var(--navy-light);font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+[data-theme="dark"] .mega-drop{background:#0D1F52;border-color:rgba(45,68,148,.5)}
+@media(max-width:991px){
+  .mega-drop{position:static;width:100%;box-shadow:none;border:none;
+    padding:8px 14px;border-radius:0;animation:none !important;
+    background:rgba(255,255,255,.04) !important;margin-top:4px}
+  .mega-cat{color:rgba(168,188,223,.5)}
+  .mega-lnk{color:rgba(255,255,255,.75) !important}
+  .mega-lnk:hover{background:rgba(200,149,42,.12) !important;color:#fff !important}
+  .mega-ico{background:rgba(255,255,255,.1);color:var(--gold-light)}
+}
+
+
+/* TOP BAR */
+#topbar{background:linear-gradient(135deg,var(--navy-dark),var(--navy));border-bottom:1px solid rgba(255,255,255,.08);padding:7px 0;font-size:12.5px;position:fixed;top:0;right:0;left:0;z-index:1001;transition:transform .3s ease}
+#topbar.hidden{transform:translateY(-100%)}
+.tb-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tb-right,.tb-left{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.tb-item{display:flex;align-items:center;gap:6px;color:rgba(168,188,223,.8);text-decoration:none;font-size:12px;transition:color .2s;white-space:nowrap}
+.tb-item:hover{color:var(--gold-light)}
+.tb-item i{color:var(--gold-light);font-size:11px}
+.tb-hours{cursor:default}
+.tb-social{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);color:rgba(168,188,223,.75);display:flex;align-items:center;justify-content:center;font-size:12px;text-decoration:none;transition:all .25s}
+.tb-social:hover{background:rgba(200,149,42,.25);color:var(--gold-light)}
+.tb-wa{background:rgba(37,211,102,.15);color:#25D366}
+.tb-wa:hover{background:rgba(37,211,102,.3)}
+.tb-divider{width:1px;height:18px;background:rgba(255,255,255,.12)}
+.tb-badge{display:flex;align-items:center;gap:5px;background:rgba(200,149,42,.15);border:1px solid rgba(200,149,42,.3);color:var(--gold-light);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+#navbar{top:36px}
+#navbar.scrolled{top:0}
+@media(max-width:767px){.tb-hours,.tb-badge,.tb-divider{display:none}#topbar{padding:5px 0}#navbar{top:32px}#navbar.scrolled{top:0}}
+
+
+/* Fix hero padding when topbar + navbar both fixed */
+.page-hero,.corp-hero,.article-hero{padding-top:160px !important}
+@media(max-width:767px){
+  .page-hero,.corp-hero,.article-hero{padding-top:130px !important}
+}
+
+
+/* ============================================================
+   MOBILE NAV FIX – v1.0
    ============================================================ */
 @media(max-width:991px){
-  .navbar-collapse{
-    background:rgba(7,18,64,.98);
-    border-top:1px solid rgba(255,255,255,.08);
-    border-radius:0 0 16px 16px;
-    padding:14px 16px 18px;
-    margin-top:8px;
-    box-shadow:0 12px 32px rgba(7,18,64,.5);
-  }
-  .navbar-collapse .navbar-nav{
-    gap:4px !important;
-  }
-  .navbar-collapse .nav-lnk{
-    display:block;
-    color:rgba(255,255,255,.88) !important;
-    padding:10px 14px !important;
-    border-radius:9px;
-    font-size:14px !important;
-  }
-  .navbar-collapse .nav-lnk:hover,
-  .navbar-collapse .nav-lnk.active{
-    background:rgba(200,149,42,.18) !important;
-    color:#fff !important;
-  }
-  .navbar-collapse .btn-nav-cta{
-    margin-top:8px;
-    display:block;
-    text-align:center;
-    border-radius:10px !important;
-  }
-  .navbar-collapse .theme-btn{
-    margin-top:4px;
-    width:100%;
-    justify-content:center;
-  }
+  .navbar-collapse{background:rgba(7,18,64,.98)!important;border-top:1px solid rgba(255,255,255,.08);border-radius:0 0 16px 16px;padding:14px 16px 18px;margin-top:8px;box-shadow:0 12px 32px rgba(7,18,64,.5)}
+  .navbar-collapse .nav-lnk{display:block;color:rgba(255,255,255,.88)!important;padding:10px 14px!important;border-radius:9px;font-size:14px!important}
+  .navbar-collapse .nav-lnk:hover,.navbar-collapse .nav-lnk.active{background:rgba(200,149,42,.18)!important;color:#fff!important}
+  .navbar-collapse .btn-nav-cta{margin-top:8px;display:block;text-align:center;border-radius:10px!important}
+  .mega-drop{position:static!important;width:100%!important;box-shadow:none!important;border:none!important;padding:8px 14px!important;border-radius:0!important;animation:none!important;background:rgba(255,255,255,.04)!important;margin-top:4px!important}
 }
+.navbar-toggler{border-color:rgba(255,255,255,.25)!important}
+.navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important}
+html,body{max-width:100%;overflow-x:hidden}
+@media(max-width:767px){.cta-btns,.hero-btns{flex-direction:column;align-items:center}.footer-bot{flex-direction:column;text-align:center;gap:8px}}
 
-/* Fix hamburger icon visibility on dark background */
-.navbar-toggler{
-  color:rgba(255,255,255,.8) !important;
-  border-color:rgba(255,255,255,.25) !important;
-}
-.navbar-toggler-icon{
-  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* Prevent horizontal scroll */
-html,body{ max-width:100%; overflow-x:hidden; }
-
-/* Mobile general */
-@media(max-width:767px){
-  .frow{ grid-template-columns:1fr !important; }
-  .cta-btns{ flex-direction:column; align-items:center; }
-  .hero-btns{ flex-direction:column; align-items:stretch; }
-  .btn-hp,.btn-ho{ justify-content:center; text-align:center; }
-  .footer-bot{ flex-direction:column; text-align:center; gap:8px; }
-}
 </style>
 </head>
 <body>
+<!-- TOP BAR -->
+<div id="topbar" role="banner" aria-label="معلومات الاتصال السريعة">
+  <div class="container-fluid px-3 px-lg-5">
+    <div class="tb-inner">
+      <div class="tb-right">
+        <a href="tel:+966500000000" class="tb-item"><i class="fas fa-phone-volume"></i><span>+966 50 000 0000</span></a>
+        <a href="mailto:info@darexpert.com" class="tb-item"><i class="fas fa-envelope"></i><span>info@darexpert.com</span></a>
+        <span class="tb-item tb-hours"><i class="fas fa-clock"></i><span>الأحد – الخميس: 8ص – 9م</span></span>
+      </div>
+      <div class="tb-left">
+        <a href="#" class="tb-social" aria-label="تويتر"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="tb-social" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="tb-social" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/966500000000" class="tb-social tb-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        <div class="tb-divider"></div>
+        <span class="tb-badge"><i class="fas fa-certificate"></i> معتمد رسمياً</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="loader"><div class="ld-em">دخ</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
 
 <!-- NAVBAR -->
@@ -257,10 +401,43 @@ html,body{ max-width:100%; overflow-x:hidden; }
       <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
         <li class="nav-item"><a class="nav-link nav-lnk" href="index.html">الرئيسية</a></li>
         <li class="nav-item"><a class="nav-link nav-lnk" href="about.html">من نحن</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="programs/index.html">البرامج</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="index.html#corporate">التدريب المؤسسي</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk active" href="contact.html">تواصل معنا</a></li>
-        <li class="nav-item d-flex align-items-center"><button class="theme-btn" id="themeBtn" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button></li>
+        <li class="nav-item mega-wrap">
+          <a class="nav-link nav-lnk" href="programs/index.html">البرامج <i class="fas fa-chevron-down" style="font-size:9px;margin-right:3px"></i></a>
+          <div class="mega-drop" role="region" aria-label="قائمة البرامج">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="mega-cat">التقنية والمهنية</div>
+                <a class="mega-lnk" href="programs/nebosh.html"><span class="mega-ico"><i class="fas fa-hard-hat"></i></span>NEBOSH السلامة المهنية</a>
+                <a class="mega-lnk" href="programs/iosh.html"><span class="mega-ico"><i class="fas fa-shield-halved"></i></span>IOSH Managing Safely</a>
+                <a class="mega-lnk" href="programs/cybersecurity.html"><span class="mega-ico"><i class="fas fa-lock"></i></span>الأمن السيبراني</a>
+                <a class="mega-lnk" href="programs/digital-transformation.html"><span class="mega-ico"><i class="fas fa-laptop-code"></i></span>التحول الرقمي</a>
+              </div>
+              <div class="col-6">
+                <div class="mega-cat">الإدارية والمؤسسية</div>
+                <a class="mega-lnk" href="programs/pmp.html"><span class="mega-ico"><i class="fas fa-diagram-project"></i></span>إدارة المشاريع PMP</a>
+                <a class="mega-lnk" href="programs/leadership.html"><span class="mega-ico"><i class="fas fa-chess-king"></i></span>القيادة الاستراتيجية</a>
+                <a class="mega-lnk" href="programs/hr-phr.html"><span class="mega-ico"><i class="fas fa-users"></i></span>الموارد البشرية PHR</a>
+                <a class="mega-lnk" href="programs/iso9001.html"><span class="mega-ico"><i class="fas fa-medal"></i></span>إدارة الجودة ISO 9001</a>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--silver-mid);margin-top:10px;padding-top:10px">
+              <a class="mega-lnk" href="programs/index.html" style="color:var(--navy-light);font-weight:800">
+                <span class="mega-ico" style="background:var(--navy);color:#fff"><i class="fas fa-th-large"></i></span>عرض جميع البرامج الـ 45+
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item mega-wrap">
+          <a class="nav-link nav-lnk" href="corporate.html">خدماتنا <i class="fas fa-chevron-down" style="font-size:9px;margin-right:3px"></i></a>
+          <div class="mega-drop" role="region" aria-label="قائمة الخدمات" style="width:300px">
+            <div class="mega-cat">حلول مؤسسية</div>
+            <a class="mega-lnk" href="corporate.html"><span class="mega-ico"><i class="fas fa-building"></i></span>التدريب المؤسسي</a>
+            <a class="mega-lnk" href="services.html"><span class="mega-ico"><i class="fas fa-briefcase"></i></span>الاستشارات والخدمات</a>
+            <a class="mega-lnk" href="clients.html"><span class="mega-ico"><i class="fas fa-handshake"></i></span>عملاؤنا ودراسات الحالة</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="news/index.html">الأخبار</a></li>
+        <li class="nav-item"><a class="nav-link nav-lnk" href="contact.html">تواصل معنا</a></li>
       </ul>
       <a href="index.html#register" class="btn-nav-cta nav-link ms-lg-3 mt-2 mt-lg-0"><i class="fas fa-pen-to-square me-1"></i>سجّل الآن</a>
     </div>
@@ -330,7 +507,7 @@ html,body{ max-width:100%; overflow-x:hidden; }
             <div class="fs-item"><div class="fs-ico"><i class="fas fa-gift"></i></div><div><strong>استشارة مجانية</strong><span>الاستشارة التدريبية مجانية تماماً</span></div></div>
           </div>
           <div class="form-body col-md-7">
-            <form id="contactForm" novalidate>
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="fgrp"><label for="cName">الاسم الكامل *</label><input class="finp" type="text" id="cName" placeholder="أدخل اسمك الكامل" required autocomplete="name"></div>
@@ -489,9 +666,94 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Form
   document.getElementById('contactForm')?.addEventListener('submit',e=>{
     e.preventDefault();
-    e.target.checkValidity()?(toast('✓ تم إرسال رسالتك! سيتواصل معك فريقنا خلال 24 ساعة.'),e.target.reset()):e.target.classList.add('was-validated');
+    if(e.target.checkValidity()){e.target.submit();setTimeout(()=>{location.href='thank-you.html'},500)}else e.target.classList.add('was-validated');
   });
   document.querySelectorAll('#navMain .nav-lnk,#navMain .btn-nav-cta').forEach(l=>l.addEventListener('click',()=>bootstrap.Collapse.getInstance(document.getElementById('navMain'))?.hide()));
 });
+
+/* ============================================================
+   FORM UX JS – Real-time validation + better feedback
+   ============================================================ */
+(function(){
+  // Real-time validation on blur
+  document.querySelectorAll('.finp,.fsel').forEach(function(input){
+    input.addEventListener('blur', function(){
+      if(this.value.trim()){
+        this.classList.remove('is-invalid');
+        if(this.checkValidity()) this.classList.add('is-valid');
+        else this.classList.add('is-invalid');
+      }
+    });
+    input.addEventListener('input', function(){
+      if(this.classList.contains('is-invalid') && this.checkValidity()){
+        this.classList.remove('is-invalid');
+        this.classList.add('is-valid');
+      }
+    });
+  });
+
+  // Character counter for textarea
+  document.querySelectorAll('textarea.finp').forEach(function(ta){
+    var max = ta.getAttribute('maxlength') || 500;
+    var counter = document.createElement('div');
+    counter.className = 'char-counter';
+    counter.textContent = '0 / ' + max + ' حرف';
+    ta.parentNode.insertBefore(counter, ta.nextSibling);
+    ta.addEventListener('input', function(){
+      var len = this.value.length;
+      counter.textContent = len + ' / ' + max + ' حرف';
+      counter.className = 'char-counter' + (len > max*0.8 ? ' warning' : '') + (len >= max ? ' danger' : '');
+    });
+    ta.setAttribute('maxlength', max);
+  });
+
+  // Submit button loading state
+  document.querySelectorAll('.btn-submit,.btn-req').forEach(function(btn){
+    btn.closest('form')?.addEventListener('submit', function(e){
+      if(this.checkValidity()){
+        btn.classList.add('loading');
+        btn.textContent = '';
+      }
+    });
+  });
+
+  // Phone number formatting (Saudi format)
+  document.querySelectorAll('input[type="tel"]').forEach(function(tel){
+    tel.addEventListener('input', function(){
+      var v = this.value.replace(/[^0-9]/g,'');
+      if(v.length > 10) v = v.slice(0,10);
+      this.value = v;
+    });
+    tel.addEventListener('blur', function(){
+      if(this.value && !this.value.match(/^05[0-9]{8}$/)){
+        this.classList.add('is-invalid');
+        var hint = this.parentNode.querySelector('.tel-hint');
+        if(!hint){
+          hint = document.createElement('div');
+          hint.className = 'tel-hint';
+          hint.style.cssText='font-size:11.5px;color:#DC2626;margin-top:4px';
+          hint.textContent = 'يجب أن يبدأ الرقم بـ 05 ويتكون من 10 أرقام';
+          this.parentNode.appendChild(hint);
+        }
+      } else {
+        this.parentNode.querySelector('.tel-hint')?.remove();
+      }
+    });
+  });
+})();
+
+
+  // Top bar hide/show on scroll
+  (function(){
+    const tb=document.getElementById('topbar'),nb=document.getElementById('navbar');
+    let last=0;
+    window.addEventListener('scroll',()=>{
+      const cur=scrollY;
+      if(cur>last&&cur>80){tb?.classList.add('hidden');if(nb)nb.style.top='0'}
+      else{tb?.classList.remove('hidden');if(nb&&tb)nb.style.top=tb.offsetHeight+'px'}
+      last=cur;
+    },{passive:true});
+  })();
+
 </script>
 </body></html>
