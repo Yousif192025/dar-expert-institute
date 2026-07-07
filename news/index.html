@@ -78,9 +78,106 @@ body{font-family:var(--font);direction:rtl;background:var(--bg-page);color:var(-
 #btt.vis{opacity:1;transform:translateY(0)}
 @media(max-width:767px){.sp{padding:44px 0}.page-hero{padding:120px 0 48px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ============================================================
+   MEGA MENU STYLES
+   ============================================================ */
+.mega-wrap{position:relative}
+.mega-drop{
+  display:none;position:absolute;top:calc(100% + 10px);right:-20px;
+  width:520px;background:var(--white);border-radius:var(--r-md);
+  box-shadow:var(--s-lg);padding:20px 16px;z-index:9999;
+  border:1px solid var(--silver-mid);
+  animation:mega-in .2s ease both;
+}
+.mega-wrap:hover .mega-drop,.mega-wrap:focus-within .mega-drop{display:block}
+@keyframes mega-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.mega-cat{font-size:10.5px;font-weight:700;letter-spacing:.07em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;
+  border-bottom:1px solid var(--silver-mid)}
+.mega-lnk{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:8px;
+  color:var(--body-text);font-size:13px;font-weight:600;text-decoration:none;transition:var(--ease)}
+.mega-lnk:hover{background:var(--navy-soft);color:var(--navy)}
+.mega-ico{width:30px;height:30px;border-radius:7px;background:var(--navy-soft);
+  color:var(--navy-light);font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+[data-theme="dark"] .mega-drop{background:#0D1F52;border-color:rgba(45,68,148,.5)}
+@media(max-width:991px){
+  .mega-drop{position:static;width:100%;box-shadow:none;border:none;
+    padding:8px 14px;border-radius:0;animation:none !important;
+    background:rgba(255,255,255,.04) !important;margin-top:4px}
+  .mega-cat{color:rgba(168,188,223,.5)}
+  .mega-lnk{color:rgba(255,255,255,.75) !important}
+  .mega-lnk:hover{background:rgba(200,149,42,.12) !important;color:#fff !important}
+  .mega-ico{background:rgba(255,255,255,.1);color:var(--gold-light)}
+}
+
+
+/* TOP BAR */
+#topbar{background:linear-gradient(135deg,var(--navy-dark),var(--navy));border-bottom:1px solid rgba(255,255,255,.08);padding:7px 0;font-size:12.5px;position:fixed;top:0;right:0;left:0;z-index:1001;transition:transform .3s ease}
+#topbar.hidden{transform:translateY(-100%)}
+.tb-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tb-right,.tb-left{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.tb-item{display:flex;align-items:center;gap:6px;color:rgba(168,188,223,.8);text-decoration:none;font-size:12px;transition:color .2s;white-space:nowrap}
+.tb-item:hover{color:var(--gold-light)}
+.tb-item i{color:var(--gold-light);font-size:11px}
+.tb-hours{cursor:default}
+.tb-social{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);color:rgba(168,188,223,.75);display:flex;align-items:center;justify-content:center;font-size:12px;text-decoration:none;transition:all .25s}
+.tb-social:hover{background:rgba(200,149,42,.25);color:var(--gold-light)}
+.tb-wa{background:rgba(37,211,102,.15);color:#25D366}
+.tb-wa:hover{background:rgba(37,211,102,.3)}
+.tb-divider{width:1px;height:18px;background:rgba(255,255,255,.12)}
+.tb-badge{display:flex;align-items:center;gap:5px;background:rgba(200,149,42,.15);border:1px solid rgba(200,149,42,.3);color:var(--gold-light);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+#navbar{top:36px}
+#navbar.scrolled{top:0}
+@media(max-width:767px){.tb-hours,.tb-badge,.tb-divider{display:none}#topbar{padding:5px 0}#navbar{top:32px}#navbar.scrolled{top:0}}
+
+
+/* Fix hero padding when topbar + navbar both fixed */
+.page-hero,.corp-hero,.article-hero{padding-top:160px !important}
+@media(max-width:767px){
+  .page-hero,.corp-hero,.article-hero{padding-top:130px !important}
+}
+
+
+/* ============================================================
+   MOBILE NAV FIX – v1.0
+   ============================================================ */
+@media(max-width:991px){
+  .navbar-collapse{background:rgba(7,18,64,.98)!important;border-top:1px solid rgba(255,255,255,.08);border-radius:0 0 16px 16px;padding:14px 16px 18px;margin-top:8px;box-shadow:0 12px 32px rgba(7,18,64,.5)}
+  .navbar-collapse .nav-lnk{display:block;color:rgba(255,255,255,.88)!important;padding:10px 14px!important;border-radius:9px;font-size:14px!important}
+  .navbar-collapse .nav-lnk:hover,.navbar-collapse .nav-lnk.active{background:rgba(200,149,42,.18)!important;color:#fff!important}
+  .navbar-collapse .btn-nav-cta{margin-top:8px;display:block;text-align:center;border-radius:10px!important}
+  .mega-drop{position:static!important;width:100%!important;box-shadow:none!important;border:none!important;padding:8px 14px!important;border-radius:0!important;animation:none!important;background:rgba(255,255,255,.04)!important;margin-top:4px!important}
+}
+.navbar-toggler{border-color:rgba(255,255,255,.25)!important}
+.navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important}
+html,body{max-width:100%;overflow-x:hidden}
+@media(max-width:767px){.cta-btns,.hero-btns{flex-direction:column;align-items:center}.footer-bot{flex-direction:column;text-align:center;gap:8px}}
+
 </style>
 </head>
 <body>
+<!-- TOP BAR -->
+<div id="topbar" role="banner" aria-label="معلومات الاتصال السريعة">
+  <div class="container-fluid px-3 px-lg-5">
+    <div class="tb-inner">
+      <div class="tb-right">
+        <a href="tel:+966500000000" class="tb-item"><i class="fas fa-phone-volume"></i><span>+966 50 000 0000</span></a>
+        <a href="mailto:info@darexpert.com" class="tb-item"><i class="fas fa-envelope"></i><span>info@darexpert.com</span></a>
+        <span class="tb-item tb-hours"><i class="fas fa-clock"></i><span>الأحد – الخميس: 8ص – 9م</span></span>
+      </div>
+      <div class="tb-left">
+        <a href="#" class="tb-social" aria-label="تويتر"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="tb-social" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="tb-social" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/966500000000" class="tb-social tb-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        <div class="tb-divider"></div>
+        <span class="tb-badge"><i class="fas fa-certificate"></i> معتمد رسمياً</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="loader"><div class="ld-em">دخ</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
 <nav id="navbar" class="navbar navbar-expand-lg">
   <div class="container-fluid px-3 px-lg-5">
@@ -90,11 +187,42 @@ body{font-family:var(--font);direction:rtl;background:var(--bg-page);color:var(-
       <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
         <li class="nav-item"><a class="nav-link nav-lnk" href="../index.html">الرئيسية</a></li>
         <li class="nav-item"><a class="nav-link nav-lnk" href="../about.html">من نحن</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="../programs/index.html">البرامج</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="../corporate.html">التدريب المؤسسي</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="../services.html">الاستشارات</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk" href="../clients.html">عملاؤنا</a></li>
-        <li class="nav-item"><a class="nav-link nav-lnk active" href="index.html">الأخبار</a></li>
+        <li class="nav-item mega-wrap">
+          <a class="nav-link nav-lnk" href="../programs/index.html">البرامج <i class="fas fa-chevron-down" style="font-size:9px;margin-right:3px"></i></a>
+          <div class="mega-drop" role="region" aria-label="قائمة البرامج">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="mega-cat">التقنية والمهنية</div>
+                <a class="mega-lnk" href="../programs/nebosh.html"><span class="mega-ico"><i class="fas fa-hard-hat"></i></span>NEBOSH السلامة المهنية</a>
+                <a class="mega-lnk" href="../programs/iosh.html"><span class="mega-ico"><i class="fas fa-shield-halved"></i></span>IOSH Managing Safely</a>
+                <a class="mega-lnk" href="../programs/cybersecurity.html"><span class="mega-ico"><i class="fas fa-lock"></i></span>الأمن السيبراني</a>
+                <a class="mega-lnk" href="../programs/digital-transformation.html"><span class="mega-ico"><i class="fas fa-laptop-code"></i></span>التحول الرقمي</a>
+              </div>
+              <div class="col-6">
+                <div class="mega-cat">الإدارية والمؤسسية</div>
+                <a class="mega-lnk" href="../programs/pmp.html"><span class="mega-ico"><i class="fas fa-diagram-project"></i></span>إدارة المشاريع PMP</a>
+                <a class="mega-lnk" href="../programs/leadership.html"><span class="mega-ico"><i class="fas fa-chess-king"></i></span>القيادة الاستراتيجية</a>
+                <a class="mega-lnk" href="../programs/hr-phr.html"><span class="mega-ico"><i class="fas fa-users"></i></span>الموارد البشرية PHR</a>
+                <a class="mega-lnk" href="../programs/iso9001.html"><span class="mega-ico"><i class="fas fa-medal"></i></span>إدارة الجودة ISO 9001</a>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--silver-mid);margin-top:10px;padding-top:10px">
+              <a class="mega-lnk" href="../programs/index.html" style="color:var(--navy-light);font-weight:800">
+                <span class="mega-ico" style="background:var(--navy);color:#fff"><i class="fas fa-th-large"></i></span>عرض جميع البرامج الـ 45+
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item mega-wrap">
+          <a class="nav-link nav-lnk" href="../corporate.html">خدماتنا <i class="fas fa-chevron-down" style="font-size:9px;margin-right:3px"></i></a>
+          <div class="mega-drop" role="region" aria-label="قائمة الخدمات" style="width:300px">
+            <div class="mega-cat">حلول مؤسسية</div>
+            <a class="mega-lnk" href="../corporate.html"><span class="mega-ico"><i class="fas fa-building"></i></span>التدريب المؤسسي</a>
+            <a class="mega-lnk" href="../services.html"><span class="mega-ico"><i class="fas fa-briefcase"></i></span>الاستشارات والخدمات</a>
+            <a class="mega-lnk" href="../clients.html"><span class="mega-ico"><i class="fas fa-handshake"></i></span>عملاؤنا ودراسات الحالة</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link nav-lnk active" href="../news/index.html">الأخبار</a></li>
         <li class="nav-item"><a class="nav-link nav-lnk" href="../contact.html">تواصل معنا</a></li>
       </ul>
       <a href="../contact.html" class="btn-nav-cta nav-link ms-lg-3 mt-2 mt-lg-0"><i class="fas fa-pen-to-square me-1"></i>سجّل الآن</a>
@@ -190,5 +318,18 @@ document.addEventListener('DOMContentLoaded',()=>{
   }));
   document.querySelectorAll('#navMain .nav-lnk,#navMain .btn-nav-cta').forEach(l=>l.addEventListener('click',()=>bootstrap.Collapse.getInstance(document.getElementById('navMain'))?.hide()));
 });
+
+  // Top bar hide/show on scroll
+  (function(){
+    const tb=document.getElementById('topbar'),nb=document.getElementById('navbar');
+    let last=0;
+    window.addEventListener('scroll',()=>{
+      const cur=scrollY;
+      if(cur>last&&cur>80){tb?.classList.add('hidden');if(nb)nb.style.top='0'}
+      else{tb?.classList.remove('hidden');if(nb&&tb)nb.style.top=tb.offsetHeight+'px'}
+      last=cur;
+    },{passive:true});
+  })();
+
 </script>
 </body></html>
